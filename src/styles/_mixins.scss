@@ -1,0 +1,48 @@
+@import "helper/add-by-property";
+
+/// Adds font-size by given value
+/// @param {Number} $value sets the font-size value preferred in rem.
+@mixin add-font-size($value) {
+  @include add-by-property($value, font-size);
+  @content;
+}
+
+/// adds margin by value and direction
+/// @param {List} $value sets the value for the margin.
+/// @param {List | string} $direction sets property for the direction the margin should be added to.
+/// the direction can be a List or a single direction.
+@mixin add-margin($value, $direction: null) {
+  @include add-by-property($value, margin, $direction);
+}
+
+/// adds padding by value and direction
+/// @param {List} $value sets the value for the margin.
+/// @param {List | string} $direction sets property for the direction the padding should be added to.
+/// the direction can be a List or a single direction.
+@mixin add-padding($value, $direction: null) {
+  @include add-by-property($value, padding, $direction);
+}
+
+@mixin mobile {
+  @media #{$small-only} {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media #{$medium-only} {
+    @content;
+  }
+}
+
+@mixin tablet-portrait {
+  @media #{$medium-only} and #{$portrait} {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media #{$large-up} {
+    @content;
+  }
+}

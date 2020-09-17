@@ -8,19 +8,22 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'default';
 
-  public get links(): Array<{ url: string, image: string }> {
-    let data = [
+  public get links(): Array<{ name: string; url: string; image: string }> {
+    const data = [
       {
+        name: 'blog',
         url: 'https://blog.andreaskrahl.de',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Ghost-Logo.svg/2000px-Ghost-Logo.svg.png'
+        image: 'assets/2000px-Ghost-Logo.svg.png',
       },
       {
+        name: 'dashboard',
         url: 'https://dashboard.andreaskrahl.de',
-        image: 'https://docs.traefik.io/assets/img/traefik.logo.png'
+        image: 'assets/traefik.logo.png',
       },
       {
+        name: 'test',
         url: 'http://test.andreaskrahl.de',
-        image: 'https://ih1.redbubble.net/image.121551245.2521/st,small,507x507-pad,600x600,f8f8f8.u1.jpg'
+        image: 'assets/it_works.png',
       },
     ];
 

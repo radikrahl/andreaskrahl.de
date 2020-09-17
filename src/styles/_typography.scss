@@ -1,0 +1,11 @@
+a {
+  text-decoration: none;
+}
+
+html {
+  line-height: 1.5;
+
+  @include add-font-size($font-size-body) {
+    font-family: "Waiting for the Sunrise", cursive;
+  }
+}

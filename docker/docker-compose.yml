@@ -1,0 +1,12 @@
+version: "3.7"
+
+networks:
+  traefik_webgateway:
+    external: true
+
+services:
+  web:
+    container_name: andkra
+    build:
+      context: ../.
+      dockerfile: Dockerfile
