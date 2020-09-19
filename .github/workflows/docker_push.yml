@@ -18,6 +18,12 @@ jobs:
       -
         name: Checkout
         uses: actions/checkout@v2
+      - 
+        name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      
       -
         name: Prepare
         id: prep
@@ -39,15 +45,8 @@ jobs:
           echo ::set-output name=version::${VERSION}
           echo ::set-output name=tags::${TAGS}
           echo ::set-output name=created::$(date -u +'%Y-%m-%dT%H:%M:%SZ')
-      
-      - 
-        name: Use Node.js 14.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 14.x
-        run: 
-          - npm config set git-tag-version false
-          - npm version ${{ steps.prep.outputs.version }}
+          npm config set git-tag-version false
+          npm version ${VERSION}
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
