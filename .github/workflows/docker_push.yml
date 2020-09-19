@@ -7,9 +7,15 @@ on:
     branches:
       - 'master'
       - 'release/*'
-  pull_request:
     tags:
       - 'v*.*.*'
+  pull_request:
+    branches:
+      - 'master'
+      - 'release/*'
+    tags:
+      - 'v*.*.*'
+
 
 jobs:
   docker:
