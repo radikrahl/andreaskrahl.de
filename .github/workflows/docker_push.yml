@@ -43,12 +43,12 @@ jobs:
           elif [ "${{ github.event_name }}" = "push" ]; then
             TAGS="$TAGS,${DOCKER_IMAGE}:sha-${GITHUB_SHA::8}"
           fi
+          npm config set git-tag-version false
+          npm version ${VERSION}
+
           echo ::set-output name=version::${VERSION}
           echo ::set-output name=tags::${TAGS}
           echo ::set-output name=created::$(date -u +'%Y-%m-%dT%H:%M:%SZ')
-          npm config set git-tag-version false
-          ls
-          npm version ${VERSION}
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
