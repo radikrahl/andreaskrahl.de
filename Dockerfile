@@ -4,7 +4,7 @@
 FROM node:current-alpine as builder
 
 ADD package.json /tmp/package.json
-ADD package-lock.json /tmp/package-lock.json
+#ADD package-lock.json /tmp/package-lock.json
 
 ## Storing node modules on a separate layer will prevent unnecessary npm installs at each build
 RUN cd /tmp && npm install --unsafe-perm
