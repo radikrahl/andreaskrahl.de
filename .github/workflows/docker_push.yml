@@ -18,6 +18,7 @@ jobs:
       -
         name: Checkout
         uses: actions/checkout@v2
+      
       - 
         name: Use Node.js 14.x
         uses: actions/setup-node@v1
@@ -45,6 +46,7 @@ jobs:
           echo ::set-output name=version::${VERSION}
           echo ::set-output name=tags::${TAGS}
           echo ::set-output name=created::$(date -u +'%Y-%m-%dT%H:%M:%SZ')
+        run: |
           npm config set git-tag-version false
           npm version ${VERSION}
       -
