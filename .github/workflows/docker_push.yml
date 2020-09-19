@@ -18,18 +18,13 @@ jobs:
       -
         name: Checkout
         uses: actions/checkout@v2
-      
+              
       - 
         name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
           node-version: 14.x
       - 
-        name: bumb npm version
-        run: |
-          npm config set git-tag-version false
-          npm version ${VERSION}
-      -
         name: Prepare
         id: prep
         run: |
@@ -39,6 +34,7 @@ jobs:
             VERSION=nightly
           elif [[ $GITHUB_REF == refs/tags/* ]]; then
             VERSION=${GITHUB_REF#refs/tags/}
+          fi
           TAGS="${DOCKER_IMAGE}:${VERSION}"
           if [[ $VERSION =~ ^v[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$ ]]; then
             MINOR=${VERSION%.*}
@@ -50,6 +46,8 @@ jobs:
           echo ::set-output name=version::${VERSION}
           echo ::set-output name=tags::${TAGS}
           echo ::set-output name=created::$(date -u +'%Y-%m-%dT%H:%M:%SZ')
+          npm config set git-tag-version false
+          npm version ${VERSION}
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
