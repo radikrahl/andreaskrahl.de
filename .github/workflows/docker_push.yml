@@ -44,7 +44,7 @@ jobs:
             TAGS="$TAGS,${DOCKER_IMAGE}:sha-${GITHUB_SHA::8}"
           fi
           npm config set git-tag-version false
-          npm version ${VERSION}
+          npm version ${VERSION} --verbose
 
           echo ::set-output name=version::${VERSION}
           echo ::set-output name=tags::${TAGS}
