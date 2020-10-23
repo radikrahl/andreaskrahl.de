@@ -6,8 +6,6 @@ import { Component, OnInit, ElementRef } from '@angular/core';
   styleUrls: ['./content-layout.component.scss']
 })
 export class ContentLayoutComponent implements OnInit {
-  title = 'default';
-
   constructor() { }
 
   public get links(): Array<{ name: string; url: string; image: string }> {
