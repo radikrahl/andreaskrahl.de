@@ -1,0 +1,18 @@
+
+[
+  {
+    "name": "blog",
+    "url": "https://blog.andreaskrahl.de",
+    "image": "assets/2000px-Ghost-Logo.svg.png"
+  },
+  {
+    "name": "dashboard",
+    "url": "https://dashboard.andreaskrahl.de",
+    "image": "assets/traefik.logo.png"
+  },
+  {
+    "name": "test",
+    "url": "http://test.andreaskrahl.de",
+    "image": "assets/it_works.png"
+  }
+]

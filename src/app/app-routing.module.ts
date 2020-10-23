@@ -8,6 +8,11 @@ const routes: Routes = [
     path: '',
     component: ContentLayoutComponent,
     children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        loadChildren: () => import('./portfolio/portfolio.module').then(m => m.PortfolioModule)
+      },
       { path: '**', component: PageNotFoundComponent }
     ]
   },
