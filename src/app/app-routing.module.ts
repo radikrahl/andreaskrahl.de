@@ -6,15 +6,20 @@ import { PageNotFoundComponent } from './layout/page-not-found/page-not-found.co
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'intro',
+    pathMatch: 'full',
+  },
+  {
+    path: '',
     component: ContentLayoutComponent,
     children: [
       {
         path: '',
-        pathMatch: 'full',
-        loadChildren: () => import('./portfolio/portfolio.module').then(m => m.PortfolioModule)
+        loadChildren: () =>
+          import('./portfolio/portfolio.module').then((m) => m.PortfolioModule),
       },
-      { path: '**', component: PageNotFoundComponent }
-    ]
+      { path: '**', component: PageNotFoundComponent },
+    ],
   },
 ];
 
@@ -22,5 +27,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}

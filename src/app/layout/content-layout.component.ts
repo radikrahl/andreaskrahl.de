@@ -1,6 +1,5 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
-import { IDataLink } from '../core/models/link.class';
-import { DataService } from '../core/services/data.service';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-content-layout',
@@ -8,7 +7,18 @@ import { DataService } from '../core/services/data.service';
   styleUrls: ['./content-layout.component.scss'],
 })
 export class ContentLayoutComponent implements OnInit {
-  constructor() {}
+  constructor(private router: Router) {}
+
+  onScroll(event: WheelEvent): void {
+  }
+
+  next(): void {
+    this.router.navigate(['overview']);
+  }
+
+  previous(): void {
+    this.router.navigate(['intro']);
+  }
 
   ngOnInit(): void {}
 }
