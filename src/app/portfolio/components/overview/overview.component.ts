@@ -14,7 +14,7 @@ export class OverviewComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataService
-      .getJSON('./assets/data/links.json')
+      .getJSON<Array<IDataLink>>('./assets/data/links.json')
       .subscribe((x) => (this.links = x));
   }
 }

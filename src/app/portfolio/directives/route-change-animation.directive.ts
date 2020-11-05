@@ -28,10 +28,10 @@ export class RouteChangeAnimationDirective implements OnInit {
       }
     }
 
-    if (event.deltaY > 0) {
+    if (event.deltaY > 0 && !(currentIndex + 1 > childRoutes.length - 1)) {
       this.router.navigate([childRoutes[currentIndex + 1].path]);
       this.animate('down');
-    } else if (event.deltaY < 0) {
+    } else if (event.deltaY < 0 && !(currentIndex - 1 < 0)) {
       this.router.navigate([childRoutes[currentIndex - 1].path]);
       this.animate('up');
     }

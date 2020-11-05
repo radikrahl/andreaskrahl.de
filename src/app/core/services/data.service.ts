@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IDataLink } from '../models/link.class';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +8,7 @@ import { IDataLink } from '../models/link.class';
 export class DataService {
   constructor(private http: HttpClient) {}
 
-  public getJSON(path: string): Observable<Array<IDataLink>> {
-    return this.http.get<Array<IDataLink>>(path);
+  public getJSON<T>(path: string): Observable<T> {
+    return this.http.get<T>(path);
   }
 }

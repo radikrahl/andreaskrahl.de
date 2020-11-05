@@ -8,10 +8,13 @@ import { SharedModule } from '../shared/shared.module';
 import { IntroComponent } from './components/intro/intro.component';
 import { OverviewComponent } from './components/overview/overview.component';
 import { PortfolioComponent } from './components/portfolio.component';
+import { AboutComponent } from './components/about/about.component';
+import { CurrentProjectsComponent } from './components/current-projects/current-projects.component';
 import { RouteChangeAnimationDirective } from './directives/route-change-animation.directive';
 import { PortfolioRoutingModule } from './portfolio-routing.module';
 
 import * as Hammer from 'hammerjs';
+
 
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = {
@@ -25,6 +28,8 @@ export class MyHammerConfig extends HammerGestureConfig {
     PortfolioComponent,
     IntroComponent,
     OverviewComponent,
+    AboutComponent,
+    CurrentProjectsComponent,
     RouteChangeAnimationDirective,
   ],
   providers: [
