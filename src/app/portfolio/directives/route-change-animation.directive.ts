@@ -4,7 +4,6 @@ import {
   Router,
   ActivatedRoute,
 } from '@angular/router';
-import { filter, map } from 'rxjs/operators';
 import { LazyLoadedChildRouteService } from 'src/app/core/services/lazyroute.service';
 import { slideLeft, slideRight } from '../classes/animations';
 import { PortfolioComponent } from '../components/portfolio.component';
@@ -17,7 +16,7 @@ export class RouteChangeAnimationDirective implements OnInit {
 
   @HostListener('window:scroll', ['$event'])
   @HostListener('wheel', ['$event'])
-  @HostListener('touch', ['$event'])
+  @HostListener('swipe', ['$event'])
   onEvent(event): void {
     const childRoutes = this.lazyRoutes.getChildRoutes(PortfolioComponent);
     let currentIndex: number;
@@ -53,32 +52,7 @@ export class RouteChangeAnimationDirective implements OnInit {
     player.play();
   }
 
-  // async stuff
-  // async animate(direction: string): Promise<any> {
-  //   const metadata = direction === 'up' ? slideLeft : slideRight;
-  //   const factory = this.builder.build(metadata);
-  //   const player = factory.create(this.element.nativeElement);
-  //   return new Promise((resolve) => {
-  //     return setTimeout(() => {
-  //       console.log('play');
-  //       player.play();
-  //       resolve();
-  //     }, 800);
-  //   });
-  // }
 
   ngOnInit(): void {
-    // this.router.events
-    //   .pipe(
-    //     filter((event) => event instanceof NavigationStart),
-    //     map((event) => {
-    //       // setTimeout(() => {
-    //       //   this.animate('down');
-    //       //   console.log(event);
-    //       // }, 5000);
-    //       // await this.animate('down');
-    //     })
-    //   )
-    //   .subscribe(async (x) => await this.animate('down'));
   }
 }
