@@ -1,24 +1,41 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
-import { LazyLoadedChildRouteService } from 'src/app/core/services/lazyroute.service';
-import { slideInAnimation } from '../classes/animations';
+import {
+  swipeLeftInstruction,
+  swipeRightInstruction,
+} from '../classes/animations';
+import { AnimationService } from '../services/animation.service';
 
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss'],
-  animations: [slideInAnimation],
 })
-export class PortfolioComponent implements OnInit, OnDestroy {
+export class PortfolioComponent implements OnInit, OnDestroy, AfterViewInit {
   public headline: string;
   private subs: Array<Subscription> = [];
+  @ViewChild('swipeHint', { static: false }) swipeHint: ElementRef;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
+    private animation: AnimationService
   ) {}
+
+  ngAfterViewInit(): void {
+    this.animation.animate(this.swipeHint, swipeRightInstruction, () => {
+      this.animation.animate(this.swipeHint, swipeLeftInstruction);
+    });
+  }
 
   ngOnInit(): void {
     if (this.route.snapshot.firstChild && this.route.snapshot.firstChild.data) {

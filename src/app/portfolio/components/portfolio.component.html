@@ -1,6 +1,9 @@
 <div class="main" appRouteChangeAnimation>
   <div class="headline">{{ headline }}</div>
   <router-outlet></router-outlet>
+  <div #swipeHint class="swipe__wrapper">
+    <span class="swipe__hint"></span>
+  </div>
 </div>
 
 <!-- [@routeAnimations]="prepareRoute(routeDirection)" -->

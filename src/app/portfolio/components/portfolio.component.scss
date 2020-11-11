@@ -13,6 +13,11 @@
   height: 100vh;
   width: 100vw;
 
+  @include mobile {
+    height: 100%;
+    width: 100%;
+  }
+
   display: flex;
   flex-flow: column nowrap;
 }
@@ -28,5 +33,26 @@
   @include mobile {
     padding: 30px;
     font-size: 2.175rem;
+  }
+}
+
+.swipe {
+  &__hint {
+    position: relative;
+    width: 100%;
+
+    &:before {
+      content: "T";
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: 50px;
+    text-align: center;
+    bottom: 0;
+    height: 500px;
   }
 }
