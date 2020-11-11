@@ -46,7 +46,11 @@ export class PortfolioComponent implements OnInit, OnDestroy, AfterViewInit {
       this.router.events
         .pipe(
           filter((event) => event instanceof NavigationEnd),
-          map(() => this.route.snapshot.firstChild ?? this.route.snapshot)
+          map(() =>
+            this.route.snapshot.firstChild !== null
+              ? this.route.snapshot.firstChild
+              : this.route.snapshot
+          )
         )
         .subscribe((x) => (this.headline = x.data.headline))
     );
