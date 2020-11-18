@@ -23,6 +23,8 @@ import { AnimationService } from '../services/animation.service';
 export class PortfolioComponent implements OnInit, OnDestroy, AfterViewInit {
   public headline: string;
   private subs: Array<Subscription> = [];
+  public swipeText = 'swipe right';
+
   @ViewChild('swipeHint', { static: false }) swipeHint: ElementRef;
 
   constructor(
@@ -32,8 +34,14 @@ export class PortfolioComponent implements OnInit, OnDestroy, AfterViewInit {
   ) {}
 
   ngAfterViewInit(): void {
+    this.playAnimation();
+  }
+
+  playAnimation(): void {
+    this.swipeText = 'swipe right';
     this.animation.animate(this.swipeHint, swipeRightInstruction, () => {
-      this.animation.animate(this.swipeHint, swipeLeftInstruction);
+      this.swipeText = 'swipe left';
+      this.animation.animate(this.swipeHint, swipeLeftInstruction, () => this.swipeText = 'hint');
     });
   }
 
