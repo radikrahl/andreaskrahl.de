@@ -18,12 +18,6 @@ jobs:
       -
         name: Checkout
         uses: actions/checkout@v2
-              
-      - 
-        name: Use Node.js 14.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 14.x
       - 
         name: Prepare
         id: prep
@@ -86,7 +80,7 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          platforms: linux/amd64,linux/arm64,linux/386
+          platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.prep.outputs.tags }}
           labels: |
