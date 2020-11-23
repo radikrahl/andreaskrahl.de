@@ -38,13 +38,14 @@ export const routes: Routes = [
           headline: 'Little bit about me.',
         },
       },
-      {
-        path: 'projects',
-        component: CurrentProjectsComponent,
-        data: {
-          headline: 'current projects and social links',
-        },
-      },
+      // first need projects to showcase ._.
+      // {
+      //   path: 'projects',
+      //   component: CurrentProjectsComponent,
+      //   data: {
+      //     headline: 'current projects and social links',
+      //   },
+      // },
     ],
   },
 ];

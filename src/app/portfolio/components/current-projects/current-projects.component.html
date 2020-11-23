@@ -1,6 +1,6 @@
 <div class="selection">
   <div *ngFor="let project of projects" [class]="project.name" class="selection__item">
-    <a [href]="project.url" class="selection__box">
+    <a draggable="false" [href]="project.url" class="selection__box">
       <img [src]="project.image" alt="" />
     </a>
   </div>
