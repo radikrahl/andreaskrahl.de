@@ -1,0 +1,32 @@
+[
+  {
+    "name": "blog",
+    "url": "https://blog.andreaskrahl.de",
+    "image": "assets/2000px-Ghost-Logo.svg.png"
+  },
+  {
+    "name": "dashboard",
+    "url": "https://dashboard.andreaskrahl.de",
+    "image": "assets/traefik.logo.png"
+  },
+  {
+    "name": "test",
+    "url": "http://test.andreaskrahl.de",
+    "image": "assets/it_works.png"
+  },
+  {
+    "name": "blog2",
+    "url": "https://blog.andreaskrahl.de",
+    "image": "assets/2000px-Ghost-Logo.svg.png"
+  },
+  {
+    "name": "dashboard2",
+    "url": "https://dashboard.andreaskrahl.de",
+    "image": "assets/traefik.logo.png"
+  },
+  {
+    "name": "test2",
+    "url": "http://test.andreaskrahl.de",
+    "image": "assets/it_works.png"
+  }
+]

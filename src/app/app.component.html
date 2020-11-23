@@ -1,13 +1,1 @@
-<div class="main">
-  <div class="welcome">
-    <div class="welcome__text">Hi. and welcome</div>
-    <div class="welcome__text">you can visit the following spaces...</div>
-  </div>
-  <div class="selection">
-    <div *ngFor="let link of links" [class]="link.name" class="selection__item">
-      <a [href]="link.url" class="selection__box">
-        <img [src]="link.image" alt="" />
-      </a>
-    </div>
-  </div>
-</div>
+<router-outlet></router-outlet>
