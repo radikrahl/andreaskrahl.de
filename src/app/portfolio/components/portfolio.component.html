@@ -1,6 +1,10 @@
 <div class="main" appRouteChangeAnimation>
   <div class="headline">{{ headline }}</div>
   <router-outlet></router-outlet>
+  <div class="swipe__wrapper">
+    <div class="swipe__text" (click)="playAnimation()">{{swipeText}}</div>
+    <span #swipeHint class="swipe__hint"></span>
+  </div>
 </div>
 
 <!-- [@routeAnimations]="prepareRoute(routeDirection)" -->
