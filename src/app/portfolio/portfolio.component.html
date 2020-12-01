@@ -1,14 +1,15 @@
+<span class="arrow -left" (click)="changeRoute('right')">
+  <i class="fa fa-chevron-left"></i>
+</span>
 <div class="main" appRouteChangeAnimation #mainRef>
-  <span class="arrow -left" (click)="changeRoute('right')">
-    <i class="fa fa-chevron-left"></i>
-  </span>
   <div class="headline">{{ headline }}</div>
   <router-outlet></router-outlet>
   <div class="swipe__wrapper">
     <div class="swipe__text" (click)="playAnimation()">{{ swipeText }}</div>
     <span #swipeHint class="swipe__hint"></span>
   </div>
-  <span class="arrow -right" (click)="changeRoute('left')">
-    <i class="fa fa-chevron-right"></i>
-  </span>
 </div>
+
+<span class="arrow -right" (click)="changeRoute('left')">
+  <i class="fa fa-chevron-right"></i>
+</span>
