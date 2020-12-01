@@ -2,10 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LazyLoadedChildRouteService } from '../core/services/lazyroute.service';
 import { AboutComponent } from './components/about/about.component';
-import { CurrentProjectsComponent } from './components/current-projects/current-projects.component';
 import { IntroComponent } from './components/intro/intro.component';
 import { OverviewComponent } from './components/overview/overview.component';
-import { PortfolioComponent } from './components/portfolio.component';
+import { PortfolioComponent } from './portfolio.component';
 
 export const routes: Routes = [
   {

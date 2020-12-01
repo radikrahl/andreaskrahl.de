@@ -1,6 +1,5 @@
 import { Injectable, Type } from '@angular/core';
-import { Route, Routes } from '@angular/router';
-import { PortfolioComponent } from 'src/app/portfolio/components/portfolio.component';
+import { Routes } from '@angular/router';
 
 @Injectable()
 export class LazyLoadedChildRouteService {

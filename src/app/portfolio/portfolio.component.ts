@@ -9,11 +9,9 @@ import {
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
-import {
-  swipeLeftInstruction,
-  swipeRightInstruction,
-} from '../classes/animations';
-import { AnimationService } from '../services/animation.service';
+import { AnimationService } from './services/animation.service';
+import { swipeRightInstruction, swipeLeftInstruction } from './classes/animations';
+
 
 @Component({
   selector: 'app-portfolio',

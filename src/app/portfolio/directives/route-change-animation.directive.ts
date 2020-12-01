@@ -8,7 +8,7 @@ import {
   slideRightIn,
   slideRightOut,
 } from '../classes/slide-animations';
-import { PortfolioComponent } from '../components/portfolio.component';
+import { PortfolioComponent } from '../portfolio.component';
 import { AnimationService } from '../services/animation.service';
 
 @Directive({
