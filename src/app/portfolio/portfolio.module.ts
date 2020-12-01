@@ -8,6 +8,7 @@ import { CurrentProjectsComponent } from './components/current-projects/current-
 import { RouteChangeAnimationDirective } from './directives/route-change-animation.directive';
 import { PortfolioRoutingModule } from './portfolio-routing.module';
 import { PortfolioComponent } from './portfolio.component';
+import { RouteChangeAnimationService } from './services/route-change-animation.service';
 
 @NgModule({
   imports: [PortfolioRoutingModule, SharedModule],
@@ -19,6 +20,10 @@ import { PortfolioComponent } from './portfolio.component';
     CurrentProjectsComponent,
     RouteChangeAnimationDirective,
   ],
-  providers: [LazyLoadedChildRouteService],
+  providers: [
+    RouteChangeAnimationService,
+    LazyLoadedChildRouteService,
+    { provide: 'componentType', useValue: PortfolioComponent },
+  ],
 })
 export class PortfolioModule {}

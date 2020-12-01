@@ -51,7 +51,7 @@ export const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [],
 })
 export class PortfolioRoutingModule {
   constructor(public childRouteService: LazyLoadedChildRouteService) {

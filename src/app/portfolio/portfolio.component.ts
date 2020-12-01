@@ -9,9 +9,11 @@ import {
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
-import { AnimationService } from './services/animation.service';
-import { swipeRightInstruction, swipeLeftInstruction } from './classes/animations';
-
+import { RouteChangeAnimationService } from './services/route-change-animation.service';
+import {
+  swipeRightInstruction,
+  swipeLeftInstruction,
+} from './classes/animations';
 
 @Component({
   selector: 'app-portfolio',
@@ -24,11 +26,12 @@ export class PortfolioComponent implements OnInit, OnDestroy, AfterViewInit {
   public swipeText = 'swipe right';
 
   @ViewChild('swipeHint', { static: false }) swipeHint: ElementRef;
+  @ViewChild('mainRef', { static: false }) mainRef: ElementRef;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private animation: AnimationService
+    private animation: RouteChangeAnimationService
   ) {}
 
   ngAfterViewInit(): void {
@@ -39,8 +42,16 @@ export class PortfolioComponent implements OnInit, OnDestroy, AfterViewInit {
     this.swipeText = 'swipe right';
     this.animation.animate(this.swipeHint, swipeRightInstruction, () => {
       this.swipeText = 'swipe left';
-      this.animation.animate(this.swipeHint, swipeLeftInstruction, () => this.swipeText = 'hint');
+      this.animation.animate(
+        this.swipeHint,
+        swipeLeftInstruction,
+        () => (this.swipeText = 'hint')
+      );
     });
+  }
+
+  changeRoute(direction: string): void {
+    this.animation.animate2(this.mainRef, direction);
   }
 
   ngOnInit(): void {
