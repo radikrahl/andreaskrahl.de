@@ -1,0 +1,15 @@
+<span class="arrow -left" (click)="changeRoute(routeDirections.Right)">
+  <i class="fa fa-angle-left"></i>
+</span>
+<div class="main" appRouteChangeAnimation #mainRef>
+  <div class="headline">{{ headline }}</div>
+  <router-outlet></router-outlet>
+  <!-- <div class="swipe__wrapper">
+    <div class="swipe__text" (click)="playAnimation()">{{ swipeText }}</div>
+    <span #swipeHint class="swipe__hint"></span>
+  </div> -->
+</div>
+
+<span class="arrow -right" (click)="changeRoute(routeDirections.Left)">
+  <i class="fa fa-angle-right"></i>
+</span>

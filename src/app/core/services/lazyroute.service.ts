@@ -1,19 +1,36 @@
-import { Injectable, Type } from '@angular/core';
-import { Route, Routes } from '@angular/router';
-import { PortfolioComponent } from 'src/app/portfolio/components/portfolio.component';
+import { Location } from '@angular/common';
+import { Inject, Injectable, Type } from '@angular/core';
+import { ActivatedRoute, Routes } from '@angular/router';
 
 @Injectable()
 export class LazyLoadedChildRouteService {
-  public childRoutes: Routes;
+  private childRoutes: Routes;
 
-  // CONSTRUCTOR
-  constructor() {}
+  constructor(
+    @Inject('componentType') private componentType: Type<any>,
+    private loc: Location
+  ) {}
 
   public updateLazyLoadedRoutes(childRoutes: Routes): void {
     this.childRoutes = childRoutes;
   }
 
-  public getChildRoutes(type: Type<any>): Routes {
-    return this.childRoutes.filter(x => x.component === type)[0].children;
+  public getChildRoutes(): Routes {
+    return this.childRoutes
+      .filter((x) => x.component === this.componentType)[0].children;
+  }
+
+  public getCurrentRouteIndex(): number {
+    const routes = this.getChildRoutes();
+    for (let index = 0; index < routes.length; index++) {
+      const element = routes[index];
+
+      if ('/' + element.path === this.loc.path()) {
+        return index;
+      }
+    }
+
+    // return default
+    return 0;
   }
 }

@@ -1,0 +1,57 @@
+import {
+  AnimationAnimateMetadata,
+  AnimationBuilder,
+} from '@angular/animations';
+import { ElementRef, Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { LazyLoadedChildRouteService } from 'src/app/core/services/lazyroute.service';
+import { RouteDirections } from 'src/app/shared/classes/route-directions.enum';
+import {
+  slideLeftIn,
+  slideLeftOut,
+  slideRightIn,
+  slideRightOut,
+} from '../classes/slide-animations';
+
+@Injectable()
+export class RouteChangeAnimationService {
+  constructor(
+    private builder: AnimationBuilder,
+    private lazyRoutes: LazyLoadedChildRouteService,
+    private router: Router
+  ) {}
+
+  animate2(element: ElementRef, direction: RouteDirections): void {
+    const childRoutes = this.lazyRoutes.getChildRoutes();
+    const currentIndex = this.lazyRoutes.getCurrentRouteIndex();
+    if (
+      direction === RouteDirections.Left &&
+      !(currentIndex + 1 > childRoutes.length - 1)
+    ) {
+      this.animate(element, slideLeftOut, () => {
+        this.router.navigate([childRoutes[currentIndex + 1].path]);
+        this.animate(element, slideRightIn);
+      });
+    } else if (direction === RouteDirections.Right && !(currentIndex - 1 < 0)) {
+      this.animate(element, slideRightOut, () => {
+        this.router.navigate([childRoutes[currentIndex - 1].path]);
+        this.animate(element, slideLeftIn);
+      });
+    }
+  }
+
+  animate(
+    element: ElementRef,
+    metadata: AnimationAnimateMetadata,
+    fn: () => void = null
+  ): void {
+    const factory = this.builder.build(metadata);
+    const player = factory.create(element.nativeElement);
+
+    if (fn != null) {
+      player.onDone(fn);
+    }
+
+    player.play();
+  }
+}
