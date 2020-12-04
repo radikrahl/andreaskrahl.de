@@ -5,6 +5,7 @@ import {
 import { ElementRef, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { LazyLoadedChildRouteService } from 'src/app/core/services/lazyroute.service';
+import { RouteDirections } from 'src/app/shared/classes/route-directions.enum';
 import {
   slideLeftIn,
   slideLeftOut,
@@ -19,21 +20,6 @@ export class RouteChangeAnimationService {
     private lazyRoutes: LazyLoadedChildRouteService,
     private router: Router
   ) {}
-
-  animate(
-    element: ElementRef,
-    metadata: AnimationAnimateMetadata,
-    fn: () => void = null
-  ): void {
-    const factory = this.builder.build(metadata);
-    const player = factory.create(element.nativeElement);
-
-    if (fn != null) {
-      player.onDone(fn);
-    }
-
-    player.play();
-  }
 
   animate2(element: ElementRef, direction: RouteDirections): void {
     const childRoutes = this.lazyRoutes.getChildRoutes();
@@ -53,11 +39,19 @@ export class RouteChangeAnimationService {
       });
     }
   }
-}
 
-export enum RouteDirections {
-  Left,
-  Right,
-  Up,
-  Down,
+  animate(
+    element: ElementRef,
+    metadata: AnimationAnimateMetadata,
+    fn: () => void = null
+  ): void {
+    const factory = this.builder.build(metadata);
+    const player = factory.create(element.nativeElement);
+
+    if (fn != null) {
+      player.onDone(fn);
+    }
+
+    player.play();
+  }
 }

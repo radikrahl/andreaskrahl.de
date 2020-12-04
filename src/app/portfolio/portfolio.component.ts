@@ -9,14 +9,12 @@ import {
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
-import {
-  RouteChangeAnimationService,
-  RouteDirections,
-} from './services/route-change-animation.service';
+import { RouteChangeAnimationService } from './services/route-change-animation.service';
 import {
   swipeRightInstruction,
   swipeLeftInstruction,
 } from './classes/animations';
+import { RouteDirections } from '../shared/classes/route-directions.enum';
 
 @Component({
   selector: 'app-portfolio',

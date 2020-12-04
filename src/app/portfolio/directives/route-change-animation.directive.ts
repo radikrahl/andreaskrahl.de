@@ -1,9 +1,7 @@
 import { AnimationPlayer } from '@angular/animations';
 import { Directive, ElementRef, HostListener } from '@angular/core';
-import {
-  RouteChangeAnimationService,
-  RouteDirections,
-} from '../services/route-change-animation.service';
+import { RouteDirections } from '../../shared/classes/route-directions.enum';
+import { RouteChangeAnimationService } from '../services/route-change-animation.service';
 
 @Directive({
   selector: '[appRouteChangeAnimation]',
