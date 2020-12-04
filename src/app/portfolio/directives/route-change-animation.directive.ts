@@ -1,6 +1,9 @@
 import { AnimationPlayer } from '@angular/animations';
 import { Directive, ElementRef, HostListener } from '@angular/core';
-import { RouteChangeAnimationService } from '../services/route-change-animation.service';
+import {
+  RouteChangeAnimationService,
+  RouteDirections,
+} from '../services/route-change-animation.service';
 
 @Directive({
   selector: '[appRouteChangeAnimation]',
@@ -12,10 +15,10 @@ export class RouteChangeAnimationDirective {
   onHorizontal(event: HammerInput): void {
     // swipe left
     if (event.deltaX < 0) {
-      this.animation.animate2(this.element, 'left');
+      this.animation.animate2(this.element, RouteDirections.Left);
       // swipe right
     } else if (event.deltaX > 0) {
-      this.animation.animate2(this.element, 'right');
+      this.animation.animate2(this.element, RouteDirections.Right);
     }
   }
 

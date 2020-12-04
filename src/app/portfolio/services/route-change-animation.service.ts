@@ -35,19 +35,29 @@ export class RouteChangeAnimationService {
     player.play();
   }
 
-  animate2(element: ElementRef, direction: string): void {
+  animate2(element: ElementRef, direction: RouteDirections): void {
     const childRoutes = this.lazyRoutes.getChildRoutes();
     const currentIndex = this.lazyRoutes.getCurrentRouteIndex();
-    if (direction === 'left' && !(currentIndex + 1 > childRoutes.length - 1)) {
+    if (
+      direction === RouteDirections.Left &&
+      !(currentIndex + 1 > childRoutes.length - 1)
+    ) {
       this.animate(element, slideLeftOut, () => {
         this.router.navigate([childRoutes[currentIndex + 1].path]);
         this.animate(element, slideRightIn);
       });
-    } else if (direction === 'right' && !(currentIndex - 1 < 0)) {
+    } else if (direction === RouteDirections.Right && !(currentIndex - 1 < 0)) {
       this.animate(element, slideRightOut, () => {
         this.router.navigate([childRoutes[currentIndex - 1].path]);
         this.animate(element, slideLeftIn);
       });
     }
   }
+}
+
+export enum RouteDirections {
+  Left,
+  Right,
+  Up,
+  Down,
 }

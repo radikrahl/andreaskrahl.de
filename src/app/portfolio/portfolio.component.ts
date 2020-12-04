@@ -9,7 +9,10 @@ import {
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
-import { RouteChangeAnimationService } from './services/route-change-animation.service';
+import {
+  RouteChangeAnimationService,
+  RouteDirections,
+} from './services/route-change-animation.service';
 import {
   swipeRightInstruction,
   swipeLeftInstruction,
@@ -24,6 +27,7 @@ export class PortfolioComponent implements OnInit, OnDestroy, AfterViewInit {
   public headline: string;
   private subs: Array<Subscription> = [];
   public swipeText = 'swipe right';
+  public routeDirections = RouteDirections;
 
   @ViewChild('swipeHint', { static: false }) swipeHint: ElementRef;
   @ViewChild('mainRef', { static: false }) mainRef: ElementRef;
@@ -50,7 +54,7 @@ export class PortfolioComponent implements OnInit, OnDestroy, AfterViewInit {
     });
   }
 
-  changeRoute(direction: string): void {
+  changeRoute(direction: RouteDirections): void {
     this.animation.animate2(this.mainRef, direction);
   }
 
