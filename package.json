@@ -34,7 +34,7 @@
     "@angular-eslint/template-parser": "12.5.0",
     "@angular/compiler-cli": "12.2.10",
     "@types/hammerjs": "2.0.36",
-    "@types/jasmine": "3.6.11",
+    "@types/jasmine": "3.9.1",
     "@types/jasminewd2": "2.0.8",
     "@types/node": "12.12.58",
     "@typescript-eslint/eslint-plugin": "4.28.2",
