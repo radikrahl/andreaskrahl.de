@@ -1,0 +1,21 @@
+.u-grid {
+    display: grid;
+}
+
+.u-flex {
+    display: flex;
+}
+
+.u-hidden {
+    display: none;
+
+    &-sm {
+        @include small-down {
+            display: none;
+        }
+    }
+}
+
+.js-initial-hidden {
+    display: none;
+}
