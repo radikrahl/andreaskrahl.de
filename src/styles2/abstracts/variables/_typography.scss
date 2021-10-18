@@ -12,7 +12,6 @@
     }
 }
 
-$fa-font-path: "../built/fontawesome/webfonts" !default;
 @include font("Nunito", "/assets/fonts/Nunito/Nunito-Regular");
 @include font("Montserrat", "/assets/fonts/Montserrat/Montserrat-Regular");
 

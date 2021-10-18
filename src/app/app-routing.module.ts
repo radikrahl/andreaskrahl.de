@@ -13,13 +13,24 @@ const routes: Routes = [
         loadChildren: () =>
           import('./portfolio/portfolio.module').then((m) => m.PortfolioModule),
       },
-      { path: '**', component: PageNotFoundComponent },
     ],
   },
+  {
+    path: 'design',
+    component: ContentLayoutComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('./design/design.module').then((m) => m.DesignModule),
+      },
+    ],
+  },
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
