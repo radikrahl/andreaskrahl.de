@@ -1,0 +1,168 @@
+<section class="post__section">
+  <h2>Form Components</h2>
+  <div>
+    <div type="email">
+      <input type="email" id="email-input" placeholder="hello@andreaskrahl.de" value="" aria-label="Email">
+    </div>
+    <button class="c-btn">Subscribe</button>
+  </div>
+  <div>
+    <form>
+      <div type="text">
+        <label for="name-input">
+          Name
+        </label>
+        <input type="text" id="name-input" placeholder="Name" aria-label="Name" value="">
+      </div>
+      <div type="email">
+        <input type="email" id="email-input" placeholder="hello@andreaskrahl.de" value="" aria-label="Email"
+          autocomplete="off">
+      </div>
+      <div type="password">
+        <input type="password" id="password-input" placeholder="Password" aria-label="Password" value="">
+        <button aria-label="Reveal Password" data-testid="reveal-password-button">Reveal Password</button>
+      </div>
+      <div>
+        <label for="example-text-1">
+          Example Text
+        </label>
+        <textarea id="example-text-1" placeholder="Type some text here" rows="10" aria-label="Example Text"></textarea>
+      </div>
+    </form>
+    <form>
+      <div type="text">
+        <label for="name-input-disabled">
+          Name
+        </label>
+        <input type="text" id="name-input-disabled" disabled="" placeholder="Name" value="Maxime Heckel"
+          aria-label="Name">
+      </div>
+
+      <div type="email">
+        <input type="email" id="email-input-disabled" disabled="" placeholder="hello@andreaskrahl.de"
+          value="hello@andreaskrahl.de" aria-label="Email">
+      </div>
+      <div type="password"><input type="password" id="password-input-disabled" disabled="" value="supersecretpassword"
+          aria-label="Password">
+        <button aria-label="Reveal Password" class="" data-testid="reveal-password-button" disabled="">
+          Reveal Password
+        </button>
+      </div>
+
+      <div>
+        <label for="example-text-2">
+          Example Text
+        </label>
+        <textarea id="example-text-2" disabled="" placeholder="Type some text here" rows="10" aria-label="Example Text">
+        Here's to the crazy ones.
+        The misfits.
+        The rebels.
+        The troublemakers.
+        The round pegs in the square holes.
+
+        The ones who see things differently.
+
+        They're not fond of rules.
+        And they have no respect for the status quo.
+
+        You can quote them, disagree with them,
+        glorify or vilify them.
+        About the only thing you can't do is ignore them.
+
+        Because they change things.
+
+        They push the human race forward.
+
+        While some may see them as the crazy ones,
+        we see genius.
+
+        Because the people who are crazy enough to think
+        they can change the world, are the ones who do.
+      </textarea>
+      </div>
+    </form>
+  </div>
+  <div>
+    <div>
+      <input type="checkbox" id="checkbox1" role="checkbox" aria-label="Checkbox">
+      <label for="checkbox1">Checkbox</label>
+    </div>
+    <div>
+      <input type="checkbox" id="checkbox3" disabled="" role="checkbox" aria-label="Checkbox">
+      <label for="checkbox3">Checkbox</label>
+    </div>
+    <div>
+      <input type="checkbox" id="checkbox2" checked="" aria-checked="true" role="checkbox" aria-label="Checkbox">
+      <label for="checkbox2">Checkbox</label>
+    </div>
+    <div>
+      <input type="checkbox" id="checkbox4" checked="" disabled="" aria-checked="true" role="checkbox"
+        aria-label="Checkbox">
+      <label for="checkbox4">Checkbox</label>
+    </div>
+  </div>
+  <div>
+    <div>
+      <input type="checkbox" id="switch1" role="switch" aria-label="Switch">
+      <label for="switch1">Switch</label>
+    </div>
+    <div>
+      <input type="checkbox" id="switch2" role="switch" aria-label="Switch" disabled="">
+      <label for="switch2">Switch</label>
+    </div>
+    <div>
+      <input type="checkbox" id="switch3" checked="" aria-checked="true" role="switch" aria-label="Switch">
+      <label for="switch3">Switch</label>
+    </div>
+    <div>
+      <input type="checkbox" id="switch4" checked="" aria-checked="true" role="switch" aria-label="Switch" disabled="">
+      <label for="switch4">Switch</label>
+    </div>
+  </div>
+  <div>
+    <div direction="column" role="radiogroup">
+      <div>
+        <input type="radio" role="radio" id="option-1" name="options" value="option1" aria-label="Option 1">
+        <label for="option-1">Option 1</label>
+      </div>
+      <div>
+        <input type="radio" role="radio" id="option-2" name="options" checked="" aria-checked="true" value="option2"
+          aria-label="Option 2">
+        <label for="option-2">Option 2</label>
+      </div>
+    </div>
+    <div direction="column" role="radiogroup">
+      <div>
+        <input type="radio" role="radio" id="radio-3" name="options-disabled" value="option3" aria-label="Option 3"
+          disabled="">
+        <label for="radio-3">Option 3</label>
+      </div>
+      <div>
+        <input type="radio" role="radio" id="radio-4" name="options-disabled" checked="" aria-checked="true"
+          value="option4" aria-label="Option 4" disabled="">
+        <label for="radio-4">Option 4</label>
+      </div>
+    </div>
+    <div direction="row" role="radiogroup">
+      <div>
+        <input type="radio" role="radio" id="option-5" name="options-horizontal" value="option5" aria-label="Option 5">
+        <label for="option-5">Option 5</label>
+      </div>
+      <div>
+        <input type="radio" role="radio" id="option-6" name="options-horizontal" checked="" aria-checked="true"
+          value="option6" aria-label="Option 6">
+        <label for="option-6">Option 6</label>
+      </div>
+    </div>
+  </div><br>
+  <div>
+    <div>
+      <label for="range-1">Range</label>
+      <input type="range" id="range-1" min="0" max="500" value="250" aria-label="Range">
+    </div>
+    <div class="css-1d3w5wq">
+      <label for="range-2">Range</label>
+      <input type="range" id="range-2" min="0" max="500" value="250" disabled="" aria-label="Range">
+    </div>
+  </div>
+</section>

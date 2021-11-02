@@ -28,11 +28,11 @@
         --color-brand-#{$key}-light: hsla(var(--palette-#{$key}-60), 100%);
         --color-brand-#{$key}-emphasis: hsla(var(--palette-#{$key}-40), 13%);
 
-        &[data-theme="dark"] {
-            --color-brand-#{$key}: hsla(var(--palette-#{$key}-60), 100%);
-            --color-brand-#{$key}-light: hsla(var(--palette-#{$key}-40), 100%);
-            --color-brand-#{$key}-emphasis: hsla(var(--palette-#{$key}-60), 13%);
-        }
+        // &[data-theme="dark"] {
+        //     --color-brand-#{$key}: hsla(var(--palette-#{$key}-60), 100%);
+        //     --color-brand-#{$key}-light: hsla(var(--palette-#{$key}-40), 100%);
+        //     --color-brand-#{$key}-emphasis: hsla(var(--palette-#{$key}-60), 13%);
+        // }
     }
 
     --color-neutral-white: #fff;
@@ -76,16 +76,4 @@
     --color-form-label: var(--color-neutral-gray-93);
     --color-form-info: var(--color-neutral-gray-73);
     --color-form-placeholder: var(--color-neutral-gray-50);
-
-    .color-gray-50 {
-        color: var(--color-neutral-gray-50);
-    }
-
-    .color-brand-primary {
-        color: var(--color-brand-primary);
-    }
-
-    .c-gray-73 {
-        color: var(--color-neutral-gray-73);
-    }
 }

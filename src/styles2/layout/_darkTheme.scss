@@ -1,11 +1,17 @@
 [data-theme="dark"] {
     body {
-        --border-divider-simple: var(--border-style-light)
-            var(--border-divider-color, var(--color-neutral-gray-87));
-
         --color-links: var(--color-neutral-gray-27);
         --color-body-text: var(--color-neutral-gray-02);
         --color-body-bg: var(--color-neutral-gray-93);
+
+        --color-form: var(--color-neutral-gray-02);
+        --color-form-border: var(--color-neutral-gray-27);
+        --color-form-border-focus: var(--color-brand-primary-light);
+        --color-form-border-error: var(--color-utility-error);
+        --color-form-bg: var(--color-neutral-black);
+        --color-form-label: var(--color-neutral-gray-02);
+        --color-form-info: var(--color-neutral-gray-27);
+        --color-form-placeholder: var(--color-neutral-gray-34);
     }
 
     .kg-bookmark-container,
