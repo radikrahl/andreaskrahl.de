@@ -1,5 +1,4 @@
-@import "../../../../styles.scss";
-$color-green: var(--);
+// @import "../../../../styles.scss";
 
 .selection {
   padding-bottom: 70px;
@@ -7,17 +6,17 @@ $color-green: var(--);
   gap: 15px 100px;
   grid-template-columns: repeat(3, 1fr);
 
-  @include large-up {
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-areas:
-      ". blog ."
-      "dashboard . test";
-  }
+  // @include large-up {
+  //   grid-template-rows: repeat(2, 1fr);
+  //   grid-template-areas:
+  //     ". blog ."
+  //     "dashboard . test";
+  // }
 
-  @include medium-up {
-    grid-template-areas: "dashboard blog test";
-    grid-template-rows: repeat(1, 1fr);
-  }
+  // @include medium-up {
+  //   grid-template-areas: "dashboard blog test";
+  //   grid-template-rows: repeat(1, 1fr);
+  // }
 
   // @include tablet-portrait {
   //   grid-template-rows: repeat(2, 1fr);
@@ -26,12 +25,12 @@ $color-green: var(--);
   //     "dashboard . test";
   // }
 
-  @include small-up {
-    padding: 20px;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-areas: none;
-    gap: 20px 0;
-  }
+  // @include small-up {
+  //   padding: 20px;
+  //   grid-template-columns: repeat(1, 1fr);
+  //   grid-template-areas: none;
+  //   gap: 20px 0;
+  // }
 
   &__item {
     height: 250px;
@@ -42,12 +41,12 @@ $color-green: var(--);
     justify-content: center;
     align-items: center;
 
-    @include small-up {
-      height: 200px;
+    // @include small-up {
+    //   height: 200px;
 
-      grid-column: auto !important;
-      grid-row: auto !important; // important is needed here, i guess tried everything. The is a reason out there in the wild...
-    }
+    //   grid-column: auto !important;
+    //   grid-row: auto !important; // important is needed here, i guess tried everything. The is a reason out there in the wild...
+    // }
 
     &.blog {
       grid-column: blog;
