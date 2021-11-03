@@ -2,7 +2,7 @@
   <h2>Form Components</h2>
   <div>
     <div type="email">
-      <input type="email" id="email-input" placeholder="hello@andreaskrahl.de" value="" aria-label="Email">
+      <input type="email" placeholder="hello@andreaskrahl.de">
     </div>
     <button class="c-btn">Subscribe</button>
   </div>
@@ -12,7 +12,7 @@
         <label for="name-input">
           Name
         </label>
-        <input type="text" id="name-input" placeholder="Name" aria-label="Name" value="">
+        <input type="text" id="name-input" placeholder="Name" value="">
       </div>
       <div type="email">
         <input type="email" id="email-input" placeholder="hello@andreaskrahl.de" value="" aria-label="Email"
@@ -34,16 +34,14 @@
         <label for="name-input-disabled">
           Name
         </label>
-        <input type="text" id="name-input-disabled" disabled="" placeholder="Name" value="Maxime Heckel"
-          aria-label="Name">
+        <input type="text" id="name-input-disabled" disabled="" placeholder="Name" value="Andreas Krahl">
       </div>
 
       <div type="email">
         <input type="email" id="email-input-disabled" disabled="" placeholder="hello@andreaskrahl.de"
           value="hello@andreaskrahl.de" aria-label="Email">
       </div>
-      <div type="password"><input type="password" id="password-input-disabled" disabled="" value="supersecretpassword"
-          aria-label="Password">
+      <div type="password"><input type="password" id="password-input-disabled" disabled="" value="supersecretpassword">
         <button aria-label="Reveal Password" class="" data-testid="reveal-password-button" disabled="">
           Reveal Password
         </button>
@@ -53,7 +51,7 @@
         <label for="example-text-2">
           Example Text
         </label>
-        <textarea id="example-text-2" disabled="" placeholder="Type some text here" rows="10" aria-label="Example Text">
+        <textarea id="example-text-2" disabled="" rows="20" placeholder="Type some text here">
         Here's to the crazy ones.
         The misfits.
         The rebels.
@@ -84,73 +82,69 @@
   </div>
   <div>
     <div>
-      <input type="checkbox" id="checkbox1" role="checkbox" aria-label="Checkbox">
+      <input type="checkbox" id="checkbox1" role="checkbox">
       <label for="checkbox1">Checkbox</label>
     </div>
     <div>
-      <input type="checkbox" id="checkbox3" disabled="" role="checkbox" aria-label="Checkbox">
+      <input type="checkbox" id="checkbox3" disabled="" role="checkbox">
       <label for="checkbox3">Checkbox</label>
     </div>
     <div>
-      <input type="checkbox" id="checkbox2" checked="" aria-checked="true" role="checkbox" aria-label="Checkbox">
+      <input type="checkbox" id="checkbox2" checked="" role="checkbox">
       <label for="checkbox2">Checkbox</label>
     </div>
     <div>
-      <input type="checkbox" id="checkbox4" checked="" disabled="" aria-checked="true" role="checkbox"
-        aria-label="Checkbox">
+      <input type="checkbox" id="checkbox4" checked="" disabled="" role="checkbox">
       <label for="checkbox4">Checkbox</label>
     </div>
   </div>
   <div>
     <div>
-      <input type="checkbox" id="switch1" role="switch" aria-label="Switch">
+      <input type="checkbox" id="switch1" role="switch">
       <label for="switch1">Switch</label>
     </div>
     <div>
-      <input type="checkbox" id="switch2" role="switch" aria-label="Switch" disabled="">
+      <input type="checkbox" id="switch2" role="switch" disabled="">
       <label for="switch2">Switch</label>
     </div>
     <div>
-      <input type="checkbox" id="switch3" checked="" aria-checked="true" role="switch" aria-label="Switch">
+      <input type="checkbox" id="switch3" checked="" role="switch">
       <label for="switch3">Switch</label>
     </div>
     <div>
-      <input type="checkbox" id="switch4" checked="" aria-checked="true" role="switch" aria-label="Switch" disabled="">
+      <input type="checkbox" id="switch4" checked="" role="switch" disabled="">
       <label for="switch4">Switch</label>
     </div>
   </div>
   <div>
     <div direction="column" role="radiogroup">
       <div>
-        <input type="radio" role="radio" id="option-1" name="options" value="option1" aria-label="Option 1">
+        <input type="radio" role="radio" id="option-1" name="options" value="option1">
         <label for="option-1">Option 1</label>
       </div>
       <div>
-        <input type="radio" role="radio" id="option-2" name="options" checked="" aria-checked="true" value="option2"
-          aria-label="Option 2">
+        <input type="radio" role="radio" id="option-2" name="options" checked="" aria-checked="true" value="option2">
         <label for="option-2">Option 2</label>
       </div>
     </div>
     <div direction="column" role="radiogroup">
       <div>
-        <input type="radio" role="radio" id="radio-3" name="options-disabled" value="option3" aria-label="Option 3"
-          disabled="">
+        <input type="radio" role="radio" id="radio-3" name="options-disabled" value="option3" disabled="">
         <label for="radio-3">Option 3</label>
       </div>
       <div>
-        <input type="radio" role="radio" id="radio-4" name="options-disabled" checked="" aria-checked="true"
-          value="option4" aria-label="Option 4" disabled="">
+        <input type="radio" role="radio" id="radio-4" name="options-disabled" checked="" value="option4"
+          aria-label="Option 4" disabled="">
         <label for="radio-4">Option 4</label>
       </div>
     </div>
     <div direction="row" role="radiogroup">
       <div>
-        <input type="radio" role="radio" id="option-5" name="options-horizontal" value="option5" aria-label="Option 5">
+        <input type="radio" role="radio" id="option-5" name="options-horizontal" value="option5">
         <label for="option-5">Option 5</label>
       </div>
       <div>
-        <input type="radio" role="radio" id="option-6" name="options-horizontal" checked="" aria-checked="true"
-          value="option6" aria-label="Option 6">
+        <input type="radio" role="radio" id="option-6" name="options-horizontal" checked="" value="option6">
         <label for="option-6">Option 6</label>
       </div>
     </div>
@@ -158,11 +152,11 @@
   <div>
     <div>
       <label for="range-1">Range</label>
-      <input type="range" id="range-1" min="0" max="500" value="250" aria-label="Range">
+      <input type="range" id="range-1" min="0" max="500" value="250">
     </div>
-    <div class="css-1d3w5wq">
+    <div>
       <label for="range-2">Range</label>
-      <input type="range" id="range-2" min="0" max="500" value="250" disabled="" aria-label="Range">
+      <input type="range" id="range-2" min="0" max="500" value="250" disabled="">
     </div>
   </div>
 </section>
