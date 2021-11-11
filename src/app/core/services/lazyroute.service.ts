@@ -12,6 +12,6 @@ export class LazyLoadedChildRouteService {
   }
 
   public getChildRoutes(type: Type<any>): Routes {
-    return this.childRoutes.filter((x) => x.component === type)[0].children;
+    return this.childRoutes ? this.childRoutes.filter((x) => x.component === type)[0].children : {} as Routes;
   }
 }

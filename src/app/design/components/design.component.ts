@@ -15,7 +15,5 @@ export class DesignComponent {
     private activatedRoute: ActivatedRoute
   ) {
     this.childRoutes = this.lazyRoutes.getChildRoutes(DesignComponent);
-    console.log(activatedRoute);
-    console.log(router);
   }
 }
