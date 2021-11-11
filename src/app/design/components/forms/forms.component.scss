@@ -1,1 +1,6 @@
-
+.c-switch {
+  display: block;
+  &:not(:first-child) {
+    margin-top: var(--space-3);
+  }
+}

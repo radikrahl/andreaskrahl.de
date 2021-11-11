@@ -1,0 +1,71 @@
+/**
+* 1) Make the slider ball "squash" when clicked.
+*/
+
+.c-switch {
+  --c-switch-color: var(--color-body-bg);
+  --c-switch-color-checked: var(--color-brand-primary);
+  --c-switch-color-disabled: var(--color-brand-primary-emphasis);
+  --c-switch-border-color: var(--color-brand-primary);
+  $slider-bubble-left: 0.15em;
+
+  $this: &;
+  font-size: 1.125em;
+  display: inline-block;
+  height: 1.25em;
+  position: relative;
+  width: 2.5em;
+
+  &:active {
+    // 1)
+    #{$this}__checkbox:not(:disabled) + #{$this}__slider:before {
+      width: 0.5em;
+    }
+  }
+
+  &__checkbox {
+    display: none;
+
+    &:checked {
+      + #{$this}__slider {
+        background-color: var(--c-switch-color-checked);
+
+        // 1)
+        &:before {
+          left: calc(100% - $slider-bubble-left);
+          transform: translateX(-100%);
+          background-color: var(--color-body-bg);
+        }
+      }
+    }
+
+    &:disabled + #{$this}__slider {
+      cursor: not-allowed;
+      background-color: var(--c-switch-color-disabled);
+    }
+  }
+
+  &__slider {
+    background-color: var(--color-body-bg);
+    border: var(--border-style-light) var(--c-switch-border-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    transition: 0.4s var(--anim-ease);
+    border-radius: 20em;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0.12em;
+      height: 0.9em;
+      width: 0.9em;
+      left: $slider-bubble-left;
+      background-color: var(--color-brand-primary-light);
+      transition: 0.4s var(--anim-ease);
+      border-radius: var(--border-radius-full);
+    }
+  }
+}

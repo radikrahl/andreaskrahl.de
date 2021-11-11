@@ -1,8 +1,8 @@
 :root {
-    --color-brand-orange: #ba6333;
-    --color-brand-blue: #234e9c;
-    --color-brand-green: #53a626;
-    --color-brand-red: #a62653;
+    --color-brand-orange: hsl(21, 57%, 46%);
+    --color-brand-blue: hsl(219, 63%, 37%);
+    --color-brand-green: hsl(99, 63%, 40%);
+    --color-brand-red: hsl(339, 63%, 40%);
 
     // inspired by https://blog.maximeheckel.com/posts/the-power-of-composition-with-css-variables/
     $baseColor: (
@@ -26,13 +26,7 @@
 
         --color-brand-#{$key}: hsla(var(--palette-#{$key}-40), 100%);
         --color-brand-#{$key}-light: hsla(var(--palette-#{$key}-60), 100%);
-        --color-brand-#{$key}-emphasis: hsla(var(--palette-#{$key}-40), 13%);
-
-        // &[data-theme="dark"] {
-        //     --color-brand-#{$key}: hsla(var(--palette-#{$key}-60), 100%);
-        //     --color-brand-#{$key}-light: hsla(var(--palette-#{$key}-40), 100%);
-        //     --color-brand-#{$key}-emphasis: hsla(var(--palette-#{$key}-60), 13%);
-        // }
+        --color-brand-#{$key}-emphasis: hsla(var(--palette-#{$key}-40), 20%);
     }
 
     --color-neutral-white: #fff;

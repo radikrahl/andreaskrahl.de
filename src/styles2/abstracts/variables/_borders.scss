@@ -9,9 +9,11 @@
     --border-thickness-bold: 0.25em;
     --border-thickness-bolder: 0.5em;
 
-    --border-style-light: var(--border-thickness) var(--border-line-style, solid);
+    --border-style-light: var(--border-thickness-light) var(--border-line-style, solid);
 
-    --border-style: var(--border-thickness-bold) var(--border-line-style, solid);
+    --border-style: var(--border-thickness) var(--border-line-style, solid);
+
+    --border-style-bold: var(--border-thickness-bold) var(--border-line-style, solid);
 
     --border-divider-simple: var(--border-style-light)
         var(--border-divider-color, var(--color-neutral-gray-13));

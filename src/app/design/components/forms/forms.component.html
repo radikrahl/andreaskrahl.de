@@ -81,10 +81,11 @@
     </form>
   </div>
   <div>
-    <div>
-      <input type="checkbox" id="checkbox1" role="checkbox">
-      <label for="checkbox1">Checkbox</label>
-    </div>
+    Checkbox
+    <label class="far c-switch">
+      <input class="c-switch__checkbox" type="checkbox" id="checkbox1" role="checkbox">
+      <span class="c-switch__slider" for="checkbox1"></span>
+    </label>
     <div>
       <input type="checkbox" id="checkbox3" disabled="" role="checkbox">
       <label for="checkbox3">Checkbox</label>
@@ -99,22 +100,23 @@
     </div>
   </div>
   <div>
-    <div>
-      <input type="checkbox" id="switch1" role="switch">
-      <label for="switch1">Switch</label>
-    </div>
-    <div>
-      <input type="checkbox" id="switch2" role="switch" disabled="">
-      <label for="switch2">Switch</label>
-    </div>
-    <div>
-      <input type="checkbox" id="switch3" checked="" role="switch">
-      <label for="switch3">Switch</label>
-    </div>
-    <div>
-      <input type="checkbox" id="switch4" checked="" role="switch" disabled="">
-      <label for="switch4">Switch</label>
-    </div>
+    Switches
+    <label class="c-switch">
+      <input class="c-switch__checkbox" type="checkbox" id="switch1" role="switch">
+      <span class="c-switch__slider" for="switch1"></span>
+    </label>
+    <label class="c-switch">
+      <input class="c-switch__checkbox" type="checkbox" id="switch2" role="switch" disabled="">
+      <span class="c-switch__slider" for="switch2"></span>
+    </label>
+    <label class="c-switch">
+      <input class="c-switch__checkbox" type="checkbox" id="switch3" checked="" role="switch">
+      <span class="c-switch__slider" for="switch3"></span>
+    </label>
+    <label class="c-switch">
+      <input class="c-switch__checkbox" type="checkbox" id="switch4" checked="" role="switch" disabled="">
+      <span class="c-switch__slider" for="switch4"></span>
+    </label>
   </div>
   <div>
     <div direction="column" role="radiogroup">
