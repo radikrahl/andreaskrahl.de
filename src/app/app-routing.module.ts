@@ -7,24 +7,14 @@ const routes: Routes = [
   {
     path: '',
     component: ContentLayoutComponent,
-    children: [
-      {
-        path: '',
-        loadChildren: () =>
-          import('./portfolio/portfolio.module').then((m) => m.PortfolioModule),
-      },
-    ],
+    loadChildren: () =>
+      import('./portfolio/portfolio.module').then((m) => m.PortfolioModule),
   },
   {
     path: 'design',
     component: ContentLayoutComponent,
-    children: [
-      {
-        path: '',
-        loadChildren: () =>
-          import('./design/design.module').then((m) => m.DesignModule),
-      },
-    ],
+    loadChildren: () =>
+      import('./design/design.module').then((m) => m.DesignModule),
   },
   { path: '**', component: PageNotFoundComponent },
 ];

@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 
 @Injectable()
 export class LazyLoadedChildRouteService {
-  public childRoutes: Routes;
+  private childRoutes: Routes;
 
   constructor() {}
 
