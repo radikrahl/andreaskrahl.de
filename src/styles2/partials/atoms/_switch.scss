@@ -12,9 +12,8 @@
   $this: &;
   font-size: 1.125em;
   display: inline-block;
-  height: 1.25em;
+
   position: relative;
-  width: 2.5em;
 
   &:active {
     // 1)
@@ -34,7 +33,7 @@
         &:before {
           left: calc(100% - $slider-bubble-left);
           transform: translateX(-100%);
-          background-color: var(--color-body-bg);
+          background-color: var(--color-neutral-white);
         }
       }
     }
@@ -48,24 +47,22 @@
   &__slider {
     background-color: var(--color-body-bg);
     border: var(--border-style-light) var(--c-switch-border-color);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
+    height: 1.35em;
+    width: 2.5em;
     transition: 0.4s var(--anim-ease);
     border-radius: 20em;
-
+    display: inline-block;
     &::before {
       content: "";
-      position: absolute;
-      bottom: 0.12em;
+      position: relative;
+      top: 0.17em;
       height: 0.9em;
       width: 0.9em;
       left: $slider-bubble-left;
       background-color: var(--color-brand-primary-light);
       transition: 0.4s var(--anim-ease);
       border-radius: var(--border-radius-full);
+      display: block;
     }
   }
 }

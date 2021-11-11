@@ -1,5 +1,6 @@
 .c-switch {
-  display: block;
+  display: flex;
+
   &:not(:first-child) {
     margin-top: var(--space-3);
   }
