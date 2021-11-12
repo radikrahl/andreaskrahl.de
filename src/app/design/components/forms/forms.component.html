@@ -80,79 +80,103 @@
       </div>
     </form>
   </div>
+
+
+
+
+
   <div>
     Checkbox
-    <label class="far c-switch">
-      <input class="c-switch__checkbox" type="checkbox" id="checkbox1" role="checkbox">
-      <span class="c-switch__slider" for="checkbox1"></span>
+    <label class="fas c-checkbox">
+      <input class="c-checkbox__input" type="checkbox" id="checkbox1" role="checkbox">
+      <div class="c-checkbox__checkbox" for="checkbox1"></div>
     </label>
-    <div>
-      <input type="checkbox" id="checkbox3" disabled="" role="checkbox">
-      <label for="checkbox3">Checkbox</label>
-    </div>
-    <div>
-      <input type="checkbox" id="checkbox2" checked="" role="checkbox">
-      <label for="checkbox2">Checkbox</label>
-    </div>
-    <div>
-      <input type="checkbox" id="checkbox4" checked="" disabled="" role="checkbox">
-      <label for="checkbox4">Checkbox</label>
-    </div>
+    <label class="fas c-checkbox">
+      <input class="c-checkbox__input" type="checkbox" id="checkbox2" role="checkbox" disabled>
+      <div class="c-checkbox__checkbox" for="checkbox2"></div>
+    </label>
+    <label class="fas c-checkbox">
+      <input class="c-checkbox__input" type="checkbox" id="checkbox3" checked role="checkbox">
+      <div class="c-checkbox__checkbox" for="checkbox3"></div>
+    </label>
+    <label class="fas c-checkbox">
+      <input class="c-checkbox__input" type="checkbox" id="checkbox4" checked disabled role="checkbox">
+      <div class="c-checkbox__checkbox" for="checkbox4"></div>
+    </label>
   </div>
+
+
+
+
   <div>
     Switches
     <label class="c-switch">
-      <input class="c-switch__checkbox" type="checkbox" id="switch1" role="switch">
+      <input class="c-switch__input" type="checkbox" id="switch1" role="switch">
       <span class="c-switch__slider" for="switch1"></span>
       <span>Switch</span>
     </label>
     <label class="c-switch">
-      <input class="c-switch__checkbox" type="checkbox" id="switch2" role="switch" disabled="">
+      <input class="c-switch__input" type="checkbox" id="switch2" role="switch" disabled="">
       <span class="c-switch__slider" for="switch2"></span>
       <span>Switch</span>
     </label>
     <label class="c-switch">
-      <input class="c-switch__checkbox" type="checkbox" id="switch3" checked="" role="switch">
+      <input class="c-switch__input" type="checkbox" id="switch3" checked="" role="switch">
       <span class="c-switch__slider" for="switch3"></span>
       <span>Switch</span>
     </label>
     <label class="c-switch">
-      <input class="c-switch__checkbox" type="checkbox" id="switch4" checked="" role="switch" disabled="">
+      <input class="c-switch__input" type="checkbox" id="switch4" checked="" role="switch" disabled="">
       <span class="c-switch__slider" for="switch4"></span>
       <span>Switch</span>
     </label>
   </div>
+
+
+
+
   <div>
     <div direction="column" role="radiogroup">
-      <div>
-        <input type="radio" role="radio" id="option-1" name="options" value="option1">
-        <label for="option-1">Option 1</label>
-      </div>
-      <div>
-        <input type="radio" role="radio" id="option-2" name="options" checked="" aria-checked="true" value="option2">
-        <label for="option-2">Option 2</label>
-      </div>
+      <label for="option-1" class="c-radio">
+        <input type="radio" id="option-1" class="c-radio__input" name="options" role="radio">
+        <div class="c-radio__radio"></div>
+        <span>Option 1</span>
+      </label>
+      <label for="option-2" class="c-radio">
+        <input type="radio" id="option-2" class="c-radio__input" name="options" role="radio">
+        <div class="c-radio__radio"></div>
+        <span>Option 2</span>
+      </label>
+      <label for="option-3" class="c-radio">
+        <input type="radio" id="option-3" class="c-radio__input" name="options" role="radio">
+        <div class="c-radio__radio"></div>
+        <span>Option 3</span>
+      </label>
     </div>
     <div direction="column" role="radiogroup">
-      <div>
-        <input type="radio" role="radio" id="radio-3" name="options-disabled" value="option3" disabled="">
-        <label for="radio-3">Option 3</label>
-      </div>
-      <div>
-        <input type="radio" role="radio" id="radio-4" name="options-disabled" checked="" value="option4"
-          aria-label="Option 4" disabled="">
-        <label for="radio-4">Option 4</label>
-      </div>
+      <label for="option-4" class="c-radio">
+        <input type="radio" id="option-4" class="c-radio__input" name="options-disabled" role="radio" disabled>
+        <div class="c-radio__radio"></div>
+        <span>Option 4</span>
+      </label>
+
+      <label for="option-5" class="c-radio">
+        <input type="radio" id="option-5" class="c-radio__input" name="options-disabled" role="radio" disabled>
+        <div class="c-radio__radio"></div>
+        <span>Option 5</span>
+      </label>
     </div>
     <div direction="row" role="radiogroup">
-      <div>
-        <input type="radio" role="radio" id="option-5" name="options-horizontal" value="option5">
-        <label for="option-5">Option 5</label>
-      </div>
-      <div>
-        <input type="radio" role="radio" id="option-6" name="options-horizontal" checked="" value="option6">
-        <label for="option-6">Option 6</label>
-      </div>
+      <label for="option-6" class="c-radio">
+        <input type="radio" id="option-6" class="c-radio__input" name="options-horizontal" role="radio">
+        <div class="c-radio__radio"></div>
+        <span>Option 6</span>
+      </label>
+      <label for="option-7" class="c-radio">
+        <input type="radio" id="option-7" class="c-radio__input" name="options-horizontal" role="radio">
+        <div class="c-radio__radio"></div>
+        <span>Option 7</span>
+      </label>
     </div>
   </div><br>
   <div>

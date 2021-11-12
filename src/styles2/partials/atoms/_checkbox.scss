@@ -1,0 +1,40 @@
+.c-checkbox {
+  $this: &;
+  display: flex;
+  &__input {
+    display: none;
+
+    &:checked + #{$this}__checkbox {
+      background-color: var(--color-brand-primary);
+
+      &::after {
+        transform: scale(1, 1) rotate(360deg);
+      }
+    }
+
+    &:disabled + #{$this}__checkbox {
+      background-color: var(--color-neutral-gray-50);
+      cursor: not-allowed;
+    }
+  }
+
+  &__checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.3em;
+    height: 1.3em;
+    background-color: var(--color-body-bg);
+    border: var(--border-style) var(--color-brand-primary);
+    border-radius: var(--border-radius-sm);
+    transition: all ease-in-out 0.5s;
+
+    &::after {
+      content: "\f00c";
+      color: var(--color-neutral-white);
+      font-size: var(--text-sm);
+      transform: scale(0, 0);
+      transition: all ease-in-out 0.5s;
+    }
+  }
+}

@@ -17,12 +17,12 @@
 
   &:active {
     // 1)
-    #{$this}__checkbox:not(:disabled) + #{$this}__slider:before {
+    #{$this}__input:not(:disabled) + #{$this}__slider:before {
       width: 0.5em;
     }
   }
 
-  &__checkbox {
+  &__input {
     display: none;
 
     &:checked {
