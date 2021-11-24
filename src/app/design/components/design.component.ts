@@ -9,11 +9,7 @@ import { LazyLoadedChildRouteService } from 'src/app/core/services/lazyroute.ser
 })
 export class DesignComponent {
   public childRoutes: Routes;
-  constructor(
-    private lazyRoutes: LazyLoadedChildRouteService,
-    private router: Router,
-    private activatedRoute: ActivatedRoute
-  ) {
+  constructor(private lazyRoutes: LazyLoadedChildRouteService) {
     this.childRoutes = this.lazyRoutes.getChildRoutes(DesignComponent);
   }
 }

@@ -1,7 +1,5 @@
-.c-switch {
-  display: flex;
-
-  &:not(:first-child) {
-    margin-top: var(--space-3);
+::ng-deep {
+  input {
+    margin-top: var(--space-6)
   }
 }

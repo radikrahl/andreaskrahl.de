@@ -30,13 +30,11 @@
 
     &::after {
       content: "";
-      margin: 0.125em;
-
       background-color: var(--color-brand-primary);
       font-size: var(--text-sm);
       border-radius: var(--border-radius-full);
-      width: 65%;
-      height: 65%;
+      width: 60%;
+      height: 60%;
       transition: all ease-in-out 0.4s;
       transform: scale(0, 0);
     }
