@@ -7,11 +7,11 @@
 */
 
 .kg-width-wide {
-    @extend .l-grid--wide;
+    @extend .l-grid--wide !optional;
 }
 
 .kg-width-full {
-    @extend .l-grid--full;
+    @extend .l-grid--full !optional;
 }
 
 .kg-image {

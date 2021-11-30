@@ -1,3 +1,5 @@
+@use "../../abstracts/_mixins/m_viewport" as viewports;
+
 .menu {
     &__toggle {
         width: 50px;
@@ -8,7 +10,7 @@
         flex-direction: column;
         z-index: 11;
 
-        @include large-up {
+        @include viewports.large-up {
             display: none;
         }
 
@@ -44,7 +46,7 @@
     }
 
     &__overlay {
-        @include large-up {
+        @include viewports.large-up {
             display: none;
         }
 
@@ -69,7 +71,7 @@
     }
 
     &--mobile {
-        @include large-up {
+        @include viewports.large-up {
             display: none;
         }
 

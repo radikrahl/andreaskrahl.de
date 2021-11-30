@@ -1,3 +1,5 @@
+@use '../abstracts/_mixins/m_viewport' as viewports;
+
 blockquote {
     font-style: italic;
     border-left: 1px solid var(--color-neutral-gray-50);
@@ -31,7 +33,7 @@ code {
     line-height: var(--line-height-md);
     font-size: var(--text-sm);
 
-    @include large-up {
+    @include viewports.large-up {
         font-size: var(--text-xs);
     }
 }

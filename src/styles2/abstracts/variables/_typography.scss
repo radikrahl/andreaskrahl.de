@@ -1,3 +1,5 @@
+@use '../_mixins/m_viewport' as viewports;
+
 @mixin font($font-family, $font-file) {
     @font-face {
         font-family: $font-family;
@@ -24,7 +26,7 @@
     --text-base: 1.2rem;
     --text-scale-ratio: 1.2;
 
-    @include large-up {
+    @include viewports.large-up {
         --text-base: 1.25rem;
     }
 }

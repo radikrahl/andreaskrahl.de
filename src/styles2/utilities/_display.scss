@@ -1,3 +1,5 @@
+@use '../abstracts/_mixins/m_viewport' as viewports;
+
 .u-grid {
     display: grid;
 }
@@ -10,7 +12,7 @@
     display: none;
 
     &-sm {
-        @include small-down {
+        @include viewports.small-down {
             display: none;
         }
     }

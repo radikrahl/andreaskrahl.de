@@ -1,4 +1,4 @@
-@import "helper/add-by-property";
+@use "helper/add-by-property";
 
 /// Adds font-size by given value
 /// @param {Number} $value sets the font-size value preferred in rem.

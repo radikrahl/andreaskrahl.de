@@ -1,3 +1,4 @@
+@use '../abstracts/_mixins/m_viewport' as viewports;
 .main-footer {
     &__inner {
         display: flex;
@@ -6,19 +7,19 @@
         border-top: var(--border-brand-primary);
         padding-top: var(--space-2-5);
 
-        @include medium-down {
+        @include viewports.medium-down {
             flex-direction: column-reverse;
         }
     }
 
     &__copyright {
-        @include medium-down {
+        @include viewports.medium-down {
             margin-top: var(--space-6);
         }
     }
 
     .navigation {
-        @include medium-down {
+        @include viewports.medium-down {
             &__item {
                 display: block;
             }

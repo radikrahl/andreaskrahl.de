@@ -68,7 +68,7 @@
             max-width: fit-content;
             white-space: nowrap;
 
-            @extend .l-grid--wide;
+            @extend .l-grid--wide !optional;
         }
     }
 

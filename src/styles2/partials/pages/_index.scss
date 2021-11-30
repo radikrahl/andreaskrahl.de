@@ -1,7 +1,9 @@
+@use '../../abstracts/_mixins/m_viewport' as viewports;
+
 .post-feed {
     &__toggle {
         text-align: right;
-        @include small-down {
+        @include viewports.small-down {
             display: none;
         }
         .c-btn {

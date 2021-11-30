@@ -3,81 +3,83 @@
 \*------------------------------------*/
 /**
  * ABSTRACTS..............................Declarations of Sass variables & mixins
+ * VENDORS................................Import vendors and npm packages
  * BASE...................................Default element styles
  * LAYOUT.................................Layout-specific styles
  * COMPONENTS.............................Component styles
  * UTILITIES..............................Utility classes
+ * ATOMIC.................................
  */
 
 /*------------------------------------*\
     #ABSTRACTS
 \*------------------------------------*/
-@import "abstracts/mixins";
-@import "abstracts/variables";
-@import "abstracts/shame";
+// @use "abstracts/mixins";
+@use "abstracts/variables";
+@use "abstracts/shame";
 
 /*------------------------------------*\
     #VENDORS
 \*------------------------------------*/
 $fa-font-path: "~@fortawesome/fontawesome-free/webfonts" !default;
-@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
-@import "~@fortawesome/fontawesome-free/scss/regular";
-@import "~@fortawesome/fontawesome-free/scss/solid.scss";
-@import "~@fortawesome/fontawesome-free/scss/brands.scss";
-// @import "a.tailwind.scss";
+@use "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@use "~@fortawesome/fontawesome-free/scss/regular";
+@use "~@fortawesome/fontawesome-free/scss/solid.scss";
+@use "~@fortawesome/fontawesome-free/scss/brands.scss";
+@use "a.tailwind.scss";
 
 /*------------------------------------*\
     #BASE
 \*------------------------------------*/
-@import "base/reset";
-@import "base/text";
-@import "base/body";
-@import "base/links";
-@import "base/lists";
-@import "base/forms";
-@import "base/buttons";
-@import "base/main";
-@import "base/media";
-@import "base/table";
+@use "base/reset";
+@use "base/text";
+@use "base/body";
+@use "base/links";
+@use "base/lists";
+@use "base/forms";
+@use "base/buttons";
+@use "base/main";
+@use "base/media";
+@use "base/table";
 
 // /*------------------------------------*\
 //     #LAYOUT
 // \*------------------------------------*/
 
-@import "layout/layout";
-@import "layout/darkTheme";
+@use "layout/layout";
+@use "layout/darkTheme";
 
 // /*------------------------------------*\
 //     #COMPONENTS
 // \*------------------------------------*/
 
-@import "components/kg-components";
-@import "components/navigation";
-@import "components/footer";
-@import "components/header";
-@import "components/buttons";
-@import "components/hljs-extensions";
+@use "components/kg-components";
+@use "components/navigation";
+@use "components/footer";
+@use "components/header";
+// @use "components/buttons";
+@use "components/hljs-extensions";
 // /*------------------------------------*\
 //     #UTILITIES
 // \*------------------------------------*/
 
-@import "utilities/display";
-@import "utilities/shadow";
-@import "utilities/positions";
+@use "utilities/display";
+@use "utilities/shadow";
+@use "utilities/positions";
 
 // /*------------------------------------*\
 //     #ATOMIC
 // \*------------------------------------*/
 
-// @import "partials/components/buttons";
-@import "partials/atoms/switch";
-@import "partials/atoms/checkbox";
-@import "partials/atoms/radio";
-@import "partials/atoms/range";
-@import "partials/molecules/author";
-@import "partials/molecules/tags";
-@import "partials/molecules/mobile-nav";
-@import "partials/organisms/post-card";
-@import "partials/pages/index";
-@import "partials/pages/post";
-@import "partials/pages/author";
+// @use "partials/components/buttons";
+@use "partials/atoms/switch";
+@use "partials/atoms/checkbox";
+@use "partials/atoms/radio";
+@use "partials/atoms/range";
+// @use "partials/molecules/author";
+@use "partials/molecules/tags";
+@use "partials/molecules/mobile-nav";
+@use "partials/organisms/post-card";
+@use "partials/pages/index";
+@use "partials/pages/post";
+@use "partials/pages/author";

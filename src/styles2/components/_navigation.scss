@@ -1,3 +1,5 @@
+@use '../abstracts/_mixins/m_viewport' as viewports;
+
 .navigation {
   display: flex;
   justify-content: center;
@@ -12,7 +14,7 @@
   }
 
   &__item {
-    @include large-up {
+    @include viewports.large-up {
       display: inline-block;
     }
 
@@ -30,7 +32,7 @@
       display: none;
     }
 
-    @include large-up {
+    @include viewports.large-up {
       ul {
         display: block;
       }
@@ -49,7 +51,7 @@
     align-items: center;
     font-size: var(--text-sm);
 
-    @include medium-up {
+    @include viewports.medium-up {
       font-size: var(--text-md);
     }
   }

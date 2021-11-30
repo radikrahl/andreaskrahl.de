@@ -1,3 +1,5 @@
+@use '../../abstracts/_mixins/m_viewport' as viewports;
+
 .author {
     &__postFeed {
         display: flex;
@@ -34,13 +36,36 @@
             }
         }
     }
+
+    &__item {
+      display: inline-block;
+
+      &:first-child:not(:only-child) {
+          position: relative;
+          right: -1em;
+      }
+  }
+
+  &__list {
+      line-height: 0;
+  }
+
+  &__text {
+      a:not(:last-child)::after {
+          content: ", ";
+      }
+  }
+
+  &__profileImage {
+      border-radius: 50%;
+  }
 }
 
 .widgets {
     width: 33.33333333%;
     display: none;
 
-    @include large-up {
+    @include viewports.large-up {
         display: block;
     }
 
