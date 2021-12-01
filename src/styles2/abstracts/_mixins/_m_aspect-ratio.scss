@@ -1,6 +1,8 @@
+@use 'sass:math';
+
 @mixin aspect-ratio($width, $height, $element: null) {
     width: 100%;
-    padding-top: ($height / $width * 100%);
+    padding-top: (math.div($height, $width) * 100%);
     position: relative;
 
     @if not $element {
