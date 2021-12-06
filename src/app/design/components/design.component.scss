@@ -1,15 +1,24 @@
+@use '../../../styles2/abstracts/_mixins/m_viewport' as viewport;
+
 .router-link-active {
   color: var(--color-links-hover);
 }
 
 // TODO: extract burger menu logic to be able to include burger menu with class and logic only
+// even as angular element, as reuseable element for "everywhere" (with adjustments)
 .side-nav {
   position: absolute;
   transform: translateX(-100%);
   transition: all var(--anim-fade-quick) var(--anim-ease);
   border-right: var(--border-brand-primary);
   box-shadow: var(--box-shadow-widget);
-  width: 20.33333%;
+  width: 33.33333%;
+  background-color: var(--color-body-bg);
+  z-index: 10;
+
+  @include viewport.large-up {
+    width: 25%;
+  }
 
   > ul {
     position: relative;
