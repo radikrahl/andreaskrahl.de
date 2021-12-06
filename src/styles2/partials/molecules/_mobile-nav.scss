@@ -1,5 +1,6 @@
 @use "../../abstracts/_mixins/m_viewport" as viewports;
 
+// TODO: extract burger menu logic to be able to include burger menu with class and logic only
 .menu {
     &__toggle {
         width: 50px;

@@ -45,6 +45,7 @@ textarea {
   border: var(--border-style-light) var(--color-form-border);
   background: var(--color-form-bg);
   border-radius: var(--border-radius-sm);
+  //TODO: transition into css variable
   transition: var(--anim-fade-quick) var(--anim-ease);
   transition-property: border-color, box-shadow;
   color: var(--color-body-text);
@@ -69,6 +70,7 @@ label > input {
     border: var(--border-style-light) var(--color-form-border);
     background: var(--color-form-bg);
     border-radius: var(--border-radius-sm);
+    //TODO: transition into css variable
     transition: var(--anim-fade-quick) var(--anim-ease);
     transition-property: border-color, box-shadow;
     color: var(--color-body-text);

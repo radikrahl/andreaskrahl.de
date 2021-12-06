@@ -58,6 +58,7 @@
 
   i {
     position: absolute;
+    //TODO: transition into css variable
     transition: all var(--anim-ease) var(--anim-fade-quick);
   }
 
