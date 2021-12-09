@@ -24,6 +24,10 @@
     position: relative;
     top: 0;
     left: 0;
+
+    > li > a {
+      display: block;
+    }
   }
 
   &--open {

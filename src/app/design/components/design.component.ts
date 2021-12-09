@@ -9,6 +9,7 @@ import { LazyLoadedChildRouteService } from 'src/app/core/services/lazyroute.ser
 })
 export class DesignComponent {
   public childRoutes: Routes;
+  public isAll: boolean;
   @ViewChild('sideNav') sideNav: ElementRef;
 
   constructor(private lazyRoutes: LazyLoadedChildRouteService) {
