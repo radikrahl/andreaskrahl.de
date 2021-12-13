@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { DarkThemeToggleComponent } from './components/darkThemeToggle/darkThemeToggle.component';
+import { RadioButtonComponent } from './components/atoms/radio/radio.component';
 
 @NgModule({
   imports: [
@@ -13,16 +14,15 @@ import { DarkThemeToggleComponent } from './components/darkThemeToggle/darkTheme
     RouterModule,
     HttpClientModule,
   ],
-  declarations: [
-    DarkThemeToggleComponent
-  ],
+  declarations: [DarkThemeToggleComponent, RadioButtonComponent],
   exports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
     HttpClientModule,
-    DarkThemeToggleComponent
-  ]
+    DarkThemeToggleComponent,
+    RadioButtonComponent,
+  ],
 })
 export class SharedModule {}

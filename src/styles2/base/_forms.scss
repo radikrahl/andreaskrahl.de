@@ -65,32 +65,6 @@ textarea {
   }
 }
 
-label > input {
-  + * {
-    border: var(--border-style-light) var(--color-form-border);
-    background: var(--color-form-bg);
-    border-radius: var(--border-radius-sm);
-    //TODO: transition into css variable
-    transition: var(--anim-fade-quick) var(--anim-ease);
-    transition-property: border-color, box-shadow;
-    color: var(--color-body-text);
-  }
-
-  &:not(:disabled) + * {
-    &:hover,
-    &:focus {
-      border-color: var(--color-form-border-focus);
-      outline: none;
-      box-shadow: 0 2px 20px -2px var(--color-form-border-focus);
-    }
-  }
-
-  &:disabled + * {
-    cursor: not-allowed;
-    color: var(--color-form-placeholder);
-  }
-}
-
 input[type="text"],
 input[type="search"],
 input[type="search"]::-webkit-search-cancel-button,

@@ -1,44 +1,15 @@
 <div>
   <div direction="column" role="radiogroup">
-    <label for="option-1" class="c-radio">
-      <input type="radio" id="option-1" class="c-radio__input" name="options" role="radio">
-      <div class="c-radio__radio"></div>
-      <span>Option 1</span>
-    </label>
-    <label for="option-2" class="c-radio">
-      <input type="radio" id="option-2" class="c-radio__input" name="options" role="radio">
-      <div class="c-radio__radio"></div>
-      <span>Option 2</span>
-    </label>
-    <label for="option-3" class="c-radio">
-      <input type="radio" id="option-3" class="c-radio__input" name="options" role="radio">
-      <div class="c-radio__radio"></div>
-      <span>Option 3</span>
-    </label>
+    <app-radio-button labelText="Option 1" inputId="option-1" name="options"></app-radio-button>
+    <app-radio-button labelText="Option 2" inputId="option-2" name="options"></app-radio-button>
+    <app-radio-button labelText="Option 3" inputId="option-3" name="options"></app-radio-button>
   </div>
   <div direction="column" role="radiogroup">
-    <label for="option-4" class="c-radio">
-      <input type="radio" id="option-4" class="c-radio__input" name="options-disabled" role="radio" disabled>
-      <div class="c-radio__radio"></div>
-      <span>Option 4</span>
-    </label>
-
-    <label for="option-5" class="c-radio">
-      <input type="radio" id="option-5" class="c-radio__input" name="options-disabled" role="radio" disabled>
-      <div class="c-radio__radio"></div>
-      <span>Option 5</span>
-    </label>
+    <app-radio-button labelText="Option 4" inputId="option-4" isDisabled="true" name="options-disabled"></app-radio-button>
+    <app-radio-button labelText="Option 5" inputId="option-5" isDisabled="true" name="options-disabled"></app-radio-button>
   </div>
   <div direction="row" role="radiogroup">
-    <label for="option-6" class="c-radio">
-      <input type="radio" id="option-6" class="c-radio__input" name="options-horizontal" role="radio">
-      <div class="c-radio__radio"></div>
-      <span>Option 6</span>
-    </label>
-    <label for="option-7" class="c-radio">
-      <input type="radio" id="option-7" class="c-radio__input" name="options-horizontal" role="radio">
-      <div class="c-radio__radio"></div>
-      <span>Option 7</span>
-    </label>
+    <app-radio-button labelText="Option 6" inputId="option-6" name="options-horizontal"></app-radio-button>
+    <app-radio-button labelText="Option 6" inputId="option-7" name="options-horizontal"></app-radio-button>
   </div>
 </div>
