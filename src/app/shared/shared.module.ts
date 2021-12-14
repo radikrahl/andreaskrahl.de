@@ -4,8 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { DarkThemeToggleComponent } from './components/darkThemeToggle/darkThemeToggle.component';
-import { RadioButtonComponent } from './components/atoms/radio/radio.component';
-import { CheckboxComponent } from './components/atoms/checkbox/checkbox.component';
+import { AtomsModule } from './components/atoms/atoms.module';
 
 @NgModule({
   imports: [
@@ -14,16 +13,9 @@ import { CheckboxComponent } from './components/atoms/checkbox/checkbox.componen
     ReactiveFormsModule,
     RouterModule,
     HttpClientModule,
+    AtomsModule,
   ],
-  declarations: [
-    DarkThemeToggleComponent,
-
-    // #### ATOMIC ####
-    // ### ATOMS ###
-    RadioButtonComponent,
-    CheckboxComponent,
-    // ### MOLECULES ###
-  ],
+  declarations: [DarkThemeToggleComponent],
   exports: [
     CommonModule,
     FormsModule,
@@ -31,12 +23,7 @@ import { CheckboxComponent } from './components/atoms/checkbox/checkbox.componen
     RouterModule,
     HttpClientModule,
     DarkThemeToggleComponent,
-
-    // #### ATOMIC ####
-    // ### ATOMS ###
-    RadioButtonComponent,
-    CheckboxComponent,
-    // ### MOLECULES ###
+    AtomsModule,
   ],
 })
 export class SharedModule {}

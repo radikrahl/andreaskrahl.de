@@ -1,24 +1,27 @@
 import {
-  AfterViewInit,
+  AfterContentInit,
   Component,
   ElementRef,
   Inject,
   ViewChild,
+  ViewEncapsulation,
 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { SwitchComponent } from '../atoms/switch/checkbox/switch.component';
 
 @Component({
   selector: 'app-dark-theme-toggle',
   templateUrl: './darkThemeToggle.component.html',
   styleUrls: ['./darkThemeToggle.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
-export class DarkThemeToggleComponent implements AfterViewInit {
-  @ViewChild('darkModeToggle', { static: false })
-    darkModeToggle: ElementRef<HTMLInputElement>;
+export class DarkThemeToggleComponent implements AfterContentInit {
+  @ViewChild(SwitchComponent, { static: true })
+  darkModeToggle: SwitchComponent;
 
   constructor(@Inject(DOCUMENT) private document: Document) {}
 
-  ngAfterViewInit(): void {
+  ngAfterContentInit(): void {
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
     if (window.localStorage.getItem('theme')) {
@@ -34,13 +37,15 @@ export class DarkThemeToggleComponent implements AfterViewInit {
       );
     }
 
-    this.darkModeToggle.nativeElement.checked =
+    this.darkModeToggle.checked =
       window.localStorage.getItem('theme') === 'dark';
   }
 
-  change(e) {
+  change(e: MouseEvent) {
     var element = document.documentElement;
-    element.dataset.theme = e.target.checked ? 'dark' : 'light';
+    element.dataset.theme = (<HTMLInputElement>e.target).checked
+      ? 'dark'
+      : 'light';
 
     window.localStorage.setItem('theme', element.dataset.theme);
   }

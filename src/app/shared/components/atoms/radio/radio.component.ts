@@ -1,27 +1,12 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { BaseInputComponent } from '../input-base.component';
 
 @Component({
   selector: 'app-radio-button',
   templateUrl: './radio.component.html',
 })
-export class RadioButtonComponent {
-  @Input() inputId: any;
-  @Input() isDisabled: boolean = false;
-  @Input() isChecked: boolean = false;
-  @Input() name: string;
-  @Input() styles: string;
-  @Input() value: any;
-
+export class RadioButtonComponent extends BaseInputComponent {
   constructor() {
-    if (!this.inputId) {
-      this.inputId = this.createUUID();
-    }
-    if (!this.name) {
-      this.name = this.inputId;
-    }
-  }
-
-  private createUUID() {
-    return '_' + Math.random().toString(36).substring(2, 9);
+    super();
   }
 }

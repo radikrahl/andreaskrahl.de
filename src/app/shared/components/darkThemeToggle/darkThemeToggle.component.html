@@ -1,6 +1,6 @@
 <div class="ml-2.5 u-flex">
-  <label class="far c-switch" for="darkModeToggle">
-    <input type="checkbox" id="darkModeToggle" #darkModeToggle class="c-switch__input" (change)="change($event)" />
-    <div class="c-switch__slider"></div>
-  </label>
+  <app-switch inputId="darkModeToggle" (change)="change($event)">
+    <i class="far fa-moon"></i>
+    <i class="far fa-sun"></i>
+  </app-switch>
 </div>

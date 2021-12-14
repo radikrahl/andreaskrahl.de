@@ -1,23 +1,15 @@
 <div>
   Switches
-  <label class="c-switch">
-    <input class="c-switch__input" type="checkbox" id="switch1" role="switch">
-    <span class="c-switch__slider" for="switch1"></span>
-    <span>Switch</span>
-  </label>
-  <label class="c-switch">
-    <input class="c-switch__input" type="checkbox" id="switch2" role="switch" disabled="">
-    <span class="c-switch__slider" for="switch2"></span>
-    <span>Switch</span>
-  </label>
-  <label class="c-switch">
-    <input class="c-switch__input" type="checkbox" id="switch3" checked="" role="switch">
-    <span class="c-switch__slider" for="switch3"></span>
-    <span>Switch</span>
-  </label>
-  <label class="c-switch">
-    <input class="c-switch__input" type="checkbox" id="switch4" checked="" role="switch" disabled="">
-    <span class="c-switch__slider" for="switch4"></span>
-    <span>Switch</span>
-  </label>
+  <app-switch inputId="switch-1">
+    Switch 1
+  </app-switch>
+  <app-switch inputId="switch-2" disabled>
+    Switch 2
+  </app-switch>
+  <app-switch inputId="switch-3" checked>
+    Switch 3
+  </app-switch>
+  <app-switch inputId="switch-4" disabled checked>
+    Switch 4
+  </app-switch>
 </div>

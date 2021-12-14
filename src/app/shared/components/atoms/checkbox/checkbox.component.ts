@@ -1,25 +1,12 @@
-import { Component, Input, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
+import { BaseInputComponent } from '../input-base.component';
 
 @Component({
   selector: 'app-checkbox',
   templateUrl: './checkbox.component.html',
 })
-export class CheckboxComponent {
-  @Input() inputId: any;
-  @Input() isDisabled: boolean = false;
-  @Input() isChecked: boolean = false;
-  @Input() name: string;
-
+export class CheckboxComponent extends BaseInputComponent {
   constructor() {
-    if (!this.inputId) {
-      this.inputId = this.createUUID();
-    }
-    if (!this.name) {
-      this.name = this.inputId;
-    }
-  }
-
-  private createUUID() {
-    return '_' + Math.random().toString(36).substring(2, 9);
+    super();
   }
 }

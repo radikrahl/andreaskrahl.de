@@ -1,32 +1,31 @@
-.c-switch {
-  --c-switch-color: var(--color-neutral-gray-87);
+app-dark-theme-toggle .c-switch {
+  --c-switch-color: var(--color-neutral-white);
+  --c-switch-color-text: var(--color-body-bg);
   --c-switch-color-checked: var(--color-neutral-gray-27);
+  --c-switch-color-unchecked: var(--color-neutral-gray-87);
   --c-switch-color-disabled: var(--color-brand-primary-emphasis);
-  --c-switch-border-color: var(--color-brand-primary);
+  --c-switch-color-border: transparent;
 
-  &::before,
-  &::after {
+  i.far::before {
     position: absolute;
     font-size: 0.875em;
     z-index: 1;
-    top: 0.275em;
-    color: var(--c-switch-color);
+    top: 0.3em;
+    color: var(--c-switch-color-text);
   }
 
-  &::before {
-    content: "\f186";
+  i.fa-moon::before {
     left: 0.21em;
 
-    :host-context([data-theme='light']) & {
+    [data-theme="light"] & {
       display: none;
     }
   }
 
-  &::after {
-    content: "\f185";
-    right: 0.26em;
+  i.fa-sun::before {
+    right: 0.6em;
 
-    :host-context([data-theme='dark']) & {
+    [data-theme="dark"] & {
       display: none;
     }
   }
