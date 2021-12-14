@@ -1,40 +1,49 @@
 .c-checkbox {
-  $this: &;
-  display: flex;
   &__input {
     display: none;
 
-    &:checked + #{$this}__checkbox {
-      background-color: var(--color-brand-primary);
+    &:checked + label {
+      i {
+        &::before {
+          transform: scale(1, 1) rotate(360deg);
+        }
 
-      &::after {
-        transform: scale(1, 1) rotate(360deg);
+        background-color: var(--color-brand-primary);
       }
     }
 
-    &:disabled + #{$this}__checkbox {
-      background-color: var(--color-neutral-gray-50);
+    &:disabled + label {
       cursor: not-allowed;
+
+      i {
+        background-color: var(--color-neutral-gray-50);
+      }
     }
   }
 
-  &__checkbox {
+  &__label {
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 1.3em;
-    height: 1.3em;
-    background-color: var(--color-body-bg);
-    border: var(--border-style) var(--color-brand-primary);
-    border-radius: var(--border-radius-sm);
-    transition: all ease-in-out 0.5s;
 
-    &::after {
-      content: "\f00c";
+    i {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: var(--space-2);
       color: var(--color-neutral-white);
       font-size: var(--text-sm);
-      transform: scale(0, 0);
-      transition: all ease-in-out 0.5s;
+      width: 1.4em;
+      height: 1.4em;
+      background-color: var(--color-body-bg);
+      border: var(--border-style) var(--color-brand-primary);
+      border-radius: var(--border-radius-sm);
+      transition: all ease-in-out var(--anim-fade-long);
+
+      &::before {
+        transition: all ease-in-out var(--anim-fade-long);
+        transform: scale(0, 0);
+        display: inline-block;
+      }
     }
   }
 }

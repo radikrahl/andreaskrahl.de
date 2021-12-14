@@ -1,19 +1,7 @@
 <div>
   Checkbox
-  <label class="fas c-checkbox">
-    <input class="c-checkbox__input" type="checkbox" id="checkbox1" role="checkbox">
-    <div class="c-checkbox__checkbox" for="checkbox1"></div>
-  </label>
-  <label class="fas c-checkbox">
-    <input class="c-checkbox__input" type="checkbox" id="checkbox2" role="checkbox" disabled>
-    <div class="c-checkbox__checkbox" for="checkbox2"></div>
-  </label>
-  <label class="fas c-checkbox">
-    <input class="c-checkbox__input" type="checkbox" id="checkbox3" checked role="checkbox">
-    <div class="c-checkbox__checkbox" for="checkbox3"></div>
-  </label>
-  <label class="fas c-checkbox">
-    <input class="c-checkbox__input" type="checkbox" id="checkbox4" checked disabled role="checkbox">
-    <div class="c-checkbox__checkbox" for="checkbox4"></div>
-  </label>
+  <app-checkbox inputId="checkbox1" labelText="Checkbox 1">asd</app-checkbox>
+  <app-checkbox inputId="checkbox2" labelText="Checkbox 2" isDisabled="true" >asd</app-checkbox>
+  <app-checkbox inputId="checkbox3" labelText="Checkbox 3" isChecked="true" >asd</app-checkbox>
+  <app-checkbox inputId="checkbox4" labelText="Checkbox 4" isChecked="true" isDisabled="true">asd</app-checkbox>
 </div>

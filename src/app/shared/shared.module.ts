@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { DarkThemeToggleComponent } from './components/darkThemeToggle/darkThemeToggle.component';
 import { RadioButtonComponent } from './components/atoms/radio/radio.component';
+import { CheckboxComponent } from './components/atoms/checkbox/checkbox.component';
 
 @NgModule({
   imports: [
@@ -14,7 +15,15 @@ import { RadioButtonComponent } from './components/atoms/radio/radio.component';
     RouterModule,
     HttpClientModule,
   ],
-  declarations: [DarkThemeToggleComponent, RadioButtonComponent],
+  declarations: [
+    DarkThemeToggleComponent,
+
+    // #### ATOMIC ####
+    // ### ATOMS ###
+    RadioButtonComponent,
+    CheckboxComponent,
+    // ### MOLECULES ###
+  ],
   exports: [
     CommonModule,
     FormsModule,
@@ -22,7 +31,12 @@ import { RadioButtonComponent } from './components/atoms/radio/radio.component';
     RouterModule,
     HttpClientModule,
     DarkThemeToggleComponent,
+
+    // #### ATOMIC ####
+    // ### ATOMS ###
     RadioButtonComponent,
+    CheckboxComponent,
+    // ### MOLECULES ###
   ],
 })
 export class SharedModule {}

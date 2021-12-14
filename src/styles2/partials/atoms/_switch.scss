@@ -52,6 +52,8 @@
     transition: 0.4s var(--anim-ease);
     border-radius: 20em;
     display: inline-block;
+    margin-right: var(--space-2);
+
     &::before {
       content: "";
       position: relative;

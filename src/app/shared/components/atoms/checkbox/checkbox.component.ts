@@ -1,16 +1,14 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-radio-button',
-  templateUrl: './radio.component.html',
+  selector: 'app-checkbox',
+  templateUrl: './checkbox.component.html',
 })
-export class RadioButtonComponent {
+export class CheckboxComponent {
   @Input() inputId: any;
   @Input() isDisabled: boolean = false;
   @Input() isChecked: boolean = false;
   @Input() name: string;
-  @Input() styles: string;
-  @Input() value: any;
 
   constructor() {
     if (!this.inputId) {

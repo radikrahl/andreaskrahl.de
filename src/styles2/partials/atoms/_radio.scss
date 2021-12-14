@@ -1,8 +1,4 @@
 .c-radio {
-  $this: &;
-  display: flex;
-  align-items: center;
-
   &__input {
     display: none;
 
@@ -22,7 +18,6 @@
 
   &__label {
     display: flex;
-    justify-content: center;
     align-items: center;
     user-select: none;
 
@@ -35,6 +30,7 @@
       background-color: var(--color-body-bg);
       border: var(--border-style) var(--color-brand-primary);
       border-radius: var(--border-radius-full);
+      margin-right: var(--space-2);
     }
   }
 }

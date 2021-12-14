@@ -1,0 +1,14 @@
+<!-- <label [class]="styles" class="c-checkbox" [for]="inputId">
+  <input class="c-checkbox__input" type="checkbox" [id]="inputId" [attr.name]="name" role="checkbox"
+    [disabled]="isDisabled" [checked]="isChecked">
+  <div class="c-checkbox__checkbox"></div>
+</label> -->
+
+<div class="c-checkbox">
+  <input class="c-checkbox__input" type="checkbox" [id]="inputId" [attr.name]="name" role="checkbox"
+    [disabled]="isDisabled" [checked]="isChecked">
+  <label [for]="inputId" class="c-checkbox__label">
+    <i class="fas fa-check"></i>
+    <ng-content></ng-content>
+  </label>
+</div>
