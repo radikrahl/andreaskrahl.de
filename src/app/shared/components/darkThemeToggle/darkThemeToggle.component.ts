@@ -1,14 +1,12 @@
 import {
   AfterContentChecked,
-  AfterContentInit,
   Component,
-  ElementRef,
   Inject,
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { SwitchComponent } from '../atoms/switch/checkbox/switch.component';
+import { SwitchComponent } from '../atoms/switch/switch.component';
 
 @Component({
   selector: 'app-dark-theme-toggle',
