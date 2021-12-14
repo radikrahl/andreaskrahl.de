@@ -1,4 +1,5 @@
 import {
+  AfterContentChecked,
   AfterContentInit,
   Component,
   ElementRef,
@@ -15,13 +16,13 @@ import { SwitchComponent } from '../atoms/switch/checkbox/switch.component';
   styleUrls: ['./darkThemeToggle.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class DarkThemeToggleComponent implements AfterContentInit {
+export class DarkThemeToggleComponent implements AfterContentChecked {
   @ViewChild(SwitchComponent, { static: true })
   darkModeToggle: SwitchComponent;
 
   constructor(@Inject(DOCUMENT) private document: Document) {}
 
-  ngAfterContentInit(): void {
+  ngAfterContentChecked(): void {
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
     if (window.localStorage.getItem('theme')) {
@@ -36,7 +37,6 @@ export class DarkThemeToggleComponent implements AfterContentInit {
         this.document.documentElement.dataset.theme
       );
     }
-
     this.darkModeToggle.checked =
       window.localStorage.getItem('theme') === 'dark';
   }

@@ -5,6 +5,7 @@ import { GuidGenerator } from 'src/app/core/helper/GuidGenerator';
 export abstract class BaseInputComponent implements OnInit {
   @Input() inputId: any;
   @Input() disabled: boolean;
+
   @Input() checked: boolean;
   @Input() name: string;
   @Input() styles: string;
