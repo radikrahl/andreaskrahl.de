@@ -6,7 +6,7 @@
   </div>
   <div class="side-nav" #sideNav>
     <ul *ngIf="childRoutes.length > 0" class="">
-      <li class="andkra-link" (click)="toggleSideNav($event); isAll = true">All</li>
+      <li class="andkra-link" [routerLink]="['/design']" (click)="toggleSideNav($event); isAll = true">All</li>
       <li *ngFor="let route of childRoutes" (click)="toggleSideNav($event); isAll = false">
         <a [routerLink]="route.path" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{exact:
           true}">{{route.path.charAt(0).toUpperCase() + route.path.slice(1)}}</a>

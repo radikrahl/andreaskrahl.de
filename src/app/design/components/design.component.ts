@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Routes } from '@angular/router';
+import { Router, Routes } from '@angular/router';
 import { LazyLoadedChildRouteService } from 'src/app/core/services/lazyroute.service';
 
 @Component({
@@ -7,13 +7,17 @@ import { LazyLoadedChildRouteService } from 'src/app/core/services/lazyroute.ser
   templateUrl: './design.component.html',
   styleUrls: ['./design.component.scss'],
 })
-export class DesignComponent {
+export class DesignComponent implements OnInit {
   public childRoutes: Routes;
   public isAll: boolean;
   @ViewChild('sideNav') sideNav: ElementRef;
 
-  constructor(private lazyRoutes: LazyLoadedChildRouteService) {
+  constructor(private router: Router, private lazyRoutes: LazyLoadedChildRouteService) {
     this.childRoutes = this.lazyRoutes.getChildRoutes(DesignComponent);
+  }
+  ngOnInit(): void {
+    if (this.router.url === '/design')
+      this.isAll = true;
   }
 
   toggleSideNav(event: MouseEvent) {
