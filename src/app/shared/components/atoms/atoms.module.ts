@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { CheckboxComponent } from './checkbox/checkbox.component';
-import { RadioButtonComponent } from './radio/radio.component';
-import { SwitchComponent } from './switch/switch.component';
+import { CheckboxComponent } from './forms/checkbox/checkbox.component';
+import { RadioButtonComponent } from './forms/radio/radio.component';
+import { SwitchComponent } from './forms/switch/switch.component';
 
 @NgModule({
   imports: [],
