@@ -33,7 +33,7 @@
     "@angular-eslint/schematics": "13.0.1",
     "@angular-eslint/template-parser": "13.0.1",
     "@angular/compiler-cli": "13.1.1",
-    "@types/hammerjs": "2.0.40",
+    "@types/hammerjs": "2.0.41",
     "@types/jasmine": "3.10.2",
     "@types/jasminewd2": "2.0.10",
     "@types/node": "16.11.14",
