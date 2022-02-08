@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
 })
 export class ColorBubbleComponent {
   @Input() modifier: ColorModifier = ColorModifier.None;
-  @Input('class') customCssClass: string;
+  @Input() customClass: string;
 
   public get color() {
     switch (this.modifier) {
@@ -21,12 +21,11 @@ export class ColorBubbleComponent {
     }
   }
 
-  constructor() {
-  }
+  constructor() {}
 }
 
 export enum ColorModifier {
   None,
   Light,
-  Emphasis
+  Emphasis,
 }

@@ -7,7 +7,8 @@
     "build": "ng build --configuration production",
     "test": "ng test --watch=false",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "prerelease": "npm run build && npm run test && npm run lint"
   },
   "private": true,
   "dependencies": {
