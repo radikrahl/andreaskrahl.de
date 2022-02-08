@@ -1,14 +1,12 @@
 <form>
-  <div type="text">
-    <label for="name-input">
-      Name
-    </label>
-    <input type="text" id="name-input" placeholder="Name" value="">
+  <div>
+    <app-text-input inputId="name-input" placeholder="Name" value="" labelText="Name">
+    </app-text-input>
   </div>
-  <div type="email">
-    <input type="email" id="email-input" placeholder="hello@andreaskrahl.de" value="" autocomplete="off">
+  <div>
+    <app-text-input labelText="E-Mail" type="email" id="email-input" placeholder="hello@andreaskrahl.de" autocomplete="off" value=""></app-text-input>
   </div>
-  <div type="password">
-    <input type="password" id="password-input" placeholder="Password" value="">
+  <div>
+    <app-text-input labelText="Password" type="password" id="password-input" placeholder="Password" value=""></app-text-input>
   </div>
 </form>

@@ -1,67 +1,31 @@
 <section class="design-color post__section">
   <h3>Brand:</h3>
+  <h4>Primary:</h4>
   <div class="design-color__container -primary-color">
-    <div class="design-color__bubble">
 
-    </div>
-    <div class="design-color__bubble -light">
-
-    </div>
-
-    <div class="design-color__bubble -emphasis">
-
-    </div>
+    <app-color-bubble></app-color-bubble>
+    <app-color-bubble [modifier]="ColorModifier.Light"></app-color-bubble>
+    <app-color-bubble [modifier]="ColorModifier.Emphasis"></app-color-bubble>
   </div>
+  <h4>Secondary:</h4>
   <div class="design-color__container -secondary-color">
-    <div class="design-color__bubble">
-
-    </div>
-    <div class="design-color__bubble -light">
-
-    </div>
-
-    <div class="design-color__bubble -emphasis">
-
-    </div>
+    <app-color-bubble></app-color-bubble>
+    <app-color-bubble [modifier]="ColorModifier.Light"></app-color-bubble>
+    <app-color-bubble [modifier]="ColorModifier.Emphasis"></app-color-bubble>
   </div>
+  <h4>Tertiary:</h4>
   <div class="design-color__container -tertiary-color">
-    <div class="design-color__bubble">
-
-    </div>
-    <div class="design-color__bubble -light">
-
-    </div>
-
-    <div class="design-color__bubble -emphasis">
-
-    </div>
+    <app-color-bubble></app-color-bubble>
+    <app-color-bubble [modifier]="ColorModifier.Light"></app-color-bubble>
+    <app-color-bubble [modifier]="ColorModifier.Emphasis"></app-color-bubble>
   </div>
   <h3>Background:</h3>
   <div class="design-color__container">
-    <div class="design-color__bubble design-color--background">
-    </div>
+    <app-color-bubble [class]="'-background'"></app-color-bubble>
   </div>
   <h3>Foreground:</h3>
   <div class="design-color__container">
 
-    <div class="design-color__bubble design-color--foreground">
-
-    </div>
-  </div>
-  <h3>Typeface:</h3>
-  <div class="design-color__container">
-
-    <div class="design-color__bubble -font-base">
-
-    </div>
-    <div class="design-color__bubble design-color--font-base">
-
-    </div>
-    <div class="design-color__bubble design-color--font-base">
-
-    </div>
-  </div>
-  <div class="design-color__palettes">
-
+    <app-color-bubble [class]="'-foreground'"></app-color-bubble>
   </div>
 </section>

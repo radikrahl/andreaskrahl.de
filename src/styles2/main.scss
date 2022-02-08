@@ -76,6 +76,8 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts" !default;
 @use "partials/atoms/checkbox";
 @use "partials/atoms/radio";
 @use "partials/atoms/range";
+@use "partials/atoms/colorBubble";
+
 // @use "partials/molecules/author";
 @use "partials/molecules/tags";
 @use "partials/molecules/mobile-nav";
