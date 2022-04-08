@@ -2,6 +2,7 @@
 
 # We label our stage as ‘builder’
 FROM node:lts-alpine as builder
+RUN apt-get update && apt-get install python
 
 ADD package.json /tmp/package.json
 #ADD package-lock.json /tmp/package-lock.json
