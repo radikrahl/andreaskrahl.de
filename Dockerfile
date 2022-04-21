@@ -1,7 +1,7 @@
 ### STAGE 1: Build ###
 
 # We label our stage as ‘builder’
-FROM node:lts as builder
+FROM node:lts-slim as builder
 
 ADD package.json /tmp/package.json
 #ADD package-lock.json /tmp/package-lock.json
