@@ -51,7 +51,7 @@
     "karma-jasmine": "5.0.0",
     "karma-jasmine-html-reporter": "1.7.0",
     "protractor": "7.0.0",
-    "tailwindcss": "^2.2.19",
+    "tailwindcss": "2.2.19",
     "ts-node": "10.7.0",
     "typescript": "4.6.3"
   }
