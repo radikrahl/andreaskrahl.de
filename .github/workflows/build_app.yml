@@ -6,7 +6,11 @@
 #     branches: [ develop ]
 name: Node.js CI
 
-on: [push]
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  pull_request:
 
 jobs:
   build:
