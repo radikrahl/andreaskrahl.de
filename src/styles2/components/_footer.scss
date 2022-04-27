@@ -1,0 +1,32 @@
+@use '../abstracts/_mixins/m_viewport' as viewports;
+.main-footer {
+    &__inner {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-top: var(--border-brand-primary);
+        padding-top: var(--space-2-5);
+
+        @include viewports.medium-down {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__copyright {
+        @include viewports.medium-down {
+            margin-top: var(--space-6);
+        }
+    }
+
+    .navigation {
+        @include viewports.medium-down {
+            &__item {
+                display: block;
+            }
+        }
+    }
+}
+
+#main-footer {
+    padding: var(--space-10) 0 var(--space-36);
+}

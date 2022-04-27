@@ -1,0 +1,67 @@
+.design-color, .c-color {
+  $this: &;
+
+  --bubble-color: var(--color-brand-primary);
+  &__container {
+    display: flex;
+
+    &.-primary-color {
+      --bubble-color: var(--color-brand-primary);
+      #{$this}__bubble {
+        &.-light {
+          --bubble-color: var(--color-brand-primary-light);
+        }
+
+        &.-emphasis {
+          --bubble-color: var(--color-brand-primary-emphasis);
+        }
+      }
+    }
+
+    &.-secondary-color {
+      --bubble-color: var(--color-brand-secondary);
+      #{$this}__bubble {
+        &.-light {
+          --bubble-color: var(--color-brand-secondary-light);
+        }
+
+        &.-emphasis {
+          --bubble-color: var(--color-brand-secondary-emphasis);
+        }
+      }
+    }
+
+    &.-tertiary-color {
+      --bubble-color: var(--color-brand-tertiary);
+      #{$this}__bubble {
+        &.-light {
+          --bubble-color: var(--color-brand-tertiary-light);
+        }
+
+        &.-emphasis {
+          --bubble-color: var(--color-brand-tertiary-emphasis);
+        }
+      }
+    }
+  }
+
+  &__bubble {
+    width: 2.75em;
+    height: 2.75em;
+    border-radius: var(--border-radius-full);
+    border: var(--border-style-light);
+    background-color: var(--bubble-color);
+
+    &.-background {
+      --bubble-color: var(--color-body-bg);
+    }
+
+    &.-foreground {
+      --bubble-color: var(--color-body-text);
+    }
+
+    &.-font-base {
+      --bubble-color: var(--color-body-text);
+    }
+  }
+}

@@ -1,18 +1,20 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { HeaderComponent } from './header.component';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ HeaderComponent ],
       imports: [
-        HttpClientTestingModule
+        HttpClientTestingModule, SharedModule, RouterTestingModule
       ],
       providers: [
       ],

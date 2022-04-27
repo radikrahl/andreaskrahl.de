@@ -1,7 +1,7 @@
 ### STAGE 1: Build ###
 
 # We label our stage as ‘builder’
-FROM node:lts-alpine as builder
+FROM node:lts as builder
 
 ADD package.json /tmp/package.json
 #ADD package-lock.json /tmp/package-lock.json
@@ -15,7 +15,7 @@ WORKDIR /ng-app
 ADD . /ng-app
 
 ## Build the angular app in production mode and store the artifacts in dist folder
-RUN $(npm bin)/ng build --prod --no-progress
+RUN npm run build --no-progress
 
 ### STAGE 2: Setup ###
 

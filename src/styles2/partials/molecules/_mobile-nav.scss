@@ -1,0 +1,113 @@
+@use "../../abstracts/_mixins/m_viewport" as viewports;
+
+// TODO: extract burger menu logic to be able to include burger menu with class and logic only
+.menu {
+    &__toggle {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 11;
+
+        @include viewports.large-up {
+            display: none;
+        }
+
+        .navigation-open & {
+            position: fixed;
+            right: 4vw;
+        }
+
+        span {
+            background-color: var(--color-neutral-gray-50);
+            width: 1.25em;
+            height: 2px;
+            margin-top: var(--space-0-5);
+            transition: all var(--anim-cubic-bezier) var(--anim-fade-long);
+            display: block;
+
+            .navigation-open & {
+                margin-top: 0;
+                position: relative;
+
+                &:first-child {
+                    transform: translate(-1px, 3px) rotate(45deg);
+                }
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+
+                &:last-child {
+                    transform: translate(-1px, -1px) rotate(-45deg);
+                }
+            }
+        }
+    }
+
+    &__overlay {
+        @include viewports.large-up {
+            display: none;
+        }
+
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+        background-color: black;
+
+        opacity: 0.2;
+        z-index: 1;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+}
+
+.navigation {
+    &__tags {
+        h5 {
+            color: var(--color-neutral-gray-73);
+        }
+    }
+
+    &--mobile {
+        @include viewports.large-up {
+            display: none;
+        }
+
+        visibility: hidden;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: var(--color-body-bg);
+        width: 69%;
+        height: 100%;
+        box-shadow: var(--box-shadow-nav);
+        transform: translateX(100%);
+        transition: all var(--anim-cubic-bezier) var(--anim-fade-long);
+        z-index: 10;
+        padding: var(--space-8) var(--space-4);
+        overflow-y: scroll;
+        overflow-x: hidden;
+
+        .navigation__item {
+            margin-top: var(--space-1);
+        }
+
+        .navigation-open & {
+            visibility: visible;
+            transform: translateX(0);
+        }
+
+        .post-card__title {
+            font-size: var(--text-sm);
+        }
+    }
+
+    &__recent {
+        .post-card__meta {
+            margin-top: 0;
+        }
+    }
+}

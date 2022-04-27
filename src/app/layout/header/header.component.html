@@ -1,5 +1,12 @@
-<header>
-  <nav>
-    hello from nav
+<header id="main-navigation" class="l-grid u-shadow--nav">
+  <nav class="l-grid--wide navigation">
+    <div class="navigation__logo"><a [routerLink]="['/']" routerLinkActive="router-link-active">wahnsinn</a></div>
+    <div class="navigation__wrapper">
+      <ul class="navigation__list">
+        <li class="navigation__item"></li>
+        <li class="navigation__item"><a [routerLink]="['/design']" routerLinkActive="router-link-active">Design</a></li>
+      </ul>
+    </div>
+    <app-dark-theme-toggle></app-dark-theme-toggle>
   </nav>
 </header>

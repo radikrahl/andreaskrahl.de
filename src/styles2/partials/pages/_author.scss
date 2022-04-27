@@ -1,0 +1,79 @@
+@use '../../abstracts/_mixins/m_viewport' as viewports;
+
+.author {
+    &__postFeed {
+        display: flex;
+        position: relative;
+        .post-feed {
+            flex: 1 1 70%;
+            width: 66.6666666%;
+        }
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+
+        img {
+            height: 7em;
+        }
+    }
+
+    &__bio {
+        margin-top: var(--space-3);
+    }
+
+    &__social {
+        margin-top: var(--space-3);
+
+        .social {
+            display: inline-block;
+
+            &:not(:first-child) {
+                margin-left: var(--space-3);
+            }
+        }
+    }
+
+    &__item {
+      display: inline-block;
+
+      &:first-child:not(:only-child) {
+          position: relative;
+          right: -1em;
+      }
+  }
+
+  &__list {
+      line-height: 0;
+  }
+
+  &__text {
+      a:not(:last-child)::after {
+          content: ", ";
+      }
+  }
+
+  &__profileImage {
+      border-radius: 50%;
+  }
+}
+
+.widgets {
+    width: 33.33333333%;
+    display: none;
+
+    @include viewports.large-up {
+        display: block;
+    }
+
+    .recent {
+        &__posts {
+            h2 {
+                font-size: var(--text-sm);
+            }
+        }
+    }
+}

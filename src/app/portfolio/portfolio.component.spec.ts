@@ -3,9 +3,10 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { PortfolioComponent } from './portfolio.component';
 import { LazyLoadedChildRouteService } from 'src/app/core/services/lazyroute.service';
 import { RouterTestingModule } from '@angular/router/testing';
+import { routes } from '../portfolio-routing.module';
+import { AnimationService } from '../services/animation.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { routes } from './portfolio-routing.module';
-import { RouteChangeAnimationService } from './services/route-change-animation.service';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 describe('PortfolioComponent', () => {
   let component: PortfolioComponent;
@@ -14,16 +15,15 @@ describe('PortfolioComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [PortfolioComponent],
-      imports: [RouterTestingModule.withRoutes(routes), BrowserAnimationsModule],
-      providers: [LazyLoadedChildRouteService, RouteChangeAnimationService, {provide: 'componentType', useValue: PortfolioComponent}],
+      imports: [RouterTestingModule.withRoutes(routes), BrowserAnimationsModule, SharedModule],
+      providers: [LazyLoadedChildRouteService, AnimationService],
     }).compileComponents();
   });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(PortfolioComponent);
     component = fixture.componentInstance;
-    // ViewChild({ static: false }) is breaking this
-    // fixture.detectChanges();
+    fixture.detectChanges();
   });
 
   it('should create', () => {

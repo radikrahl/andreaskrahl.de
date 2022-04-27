@@ -7,19 +7,20 @@ const routes: Routes = [
   {
     path: '',
     component: ContentLayoutComponent,
-    children: [
-      {
-        path: '',
-        loadChildren: () =>
-          import('./portfolio/portfolio.module').then((m) => m.PortfolioModule),
-      },
-      { path: '**', component: PageNotFoundComponent },
-    ],
+    loadChildren: () =>
+      import('./portfolio/portfolio.module').then((m) => m.PortfolioModule),
   },
+  {
+    path: 'design',
+    component: ContentLayoutComponent,
+    loadChildren: () =>
+      import('./design/design.module').then((m) => m.DesignModule),
+  },
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
