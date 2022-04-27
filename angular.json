@@ -53,8 +53,10 @@
               "sourceMap": false,
               "namedChunks": false,
               "extractLicenses": true,
-              "vendorChunk": false,
+              "vendorChunk": true,
               "buildOptimizer": true,
+              "aot": true,
+              "statsJson": false,
               "budgets": [
                 {
                   "type": "initial",
