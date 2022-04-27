@@ -1,0 +1,23 @@
+@use '../abstracts/_mixins/m_viewport' as viewports;
+
+.u-grid {
+    display: grid;
+}
+
+.u-flex {
+    display: flex;
+}
+
+.u-hidden {
+    display: none;
+
+    &-sm {
+        @include viewports.small-down {
+            display: none;
+        }
+    }
+}
+
+.js-initial-hidden {
+    display: none;
+}

@@ -1,0 +1,50 @@
+.c-radio {
+  &__input {
+    display: none;
+
+    &:checked + label {
+      &::before {
+        animation: radioClick var(--anim-fade-long) var(--anim-ease) 0s 1 normal
+          forwards;
+        background-color: var(--color-brand-primary);
+      }
+    }
+
+    &:disabled + label::before {
+      background-color: var(--color-neutral-gray-50);
+      cursor: not-allowed;
+    }
+  }
+
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+
+    &::before {
+      content: "";
+      font-size: var(--text-sm);
+      display: inline-block;
+      width: 1.35em;
+      height: 1.35em;
+      background-color: var(--color-body-bg);
+      border: var(--border-style) var(--color-brand-primary);
+      border-radius: var(--border-radius-full);
+      margin-right: var(--space-2);
+    }
+  }
+}
+
+@keyframes radioClick {
+  0% {
+    box-shadow: inset 0 0 0 0.15em var(--color-body-bg);
+  }
+
+  60% {
+    box-shadow: inset 0 0 0 0.35em var(--color-body-bg);
+  }
+
+  100% {
+    box-shadow: inset 0 0 0 0.25em var(--color-body-bg);
+  }
+}

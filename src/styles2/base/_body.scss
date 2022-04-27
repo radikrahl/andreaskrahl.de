@@ -1,0 +1,13 @@
+html {
+    min-height: 100vh;
+    font-size: 100%;
+}
+
+body {
+    min-height: 100vh;
+    font-family: var(--font-family-primary);
+    font-size: var(--text-base);
+    line-height: var(--line-height-lg);
+    background-color: var(--color-body-bg);
+    color: var(--color-body-text);
+}

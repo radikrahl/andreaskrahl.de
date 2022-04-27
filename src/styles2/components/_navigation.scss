@@ -1,0 +1,118 @@
+@use '../abstracts/_mixins/m_viewport' as viewports;
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  &__logo {
+    margin-right: auto;
+
+    img {
+      height: var(--navigation-height);
+    }
+  }
+
+  &__item {
+    @include viewports.large-up {
+      display: inline-block;
+    }
+
+    &:not(:last-child) {
+      margin-right: var(--space-2);
+    }
+  }
+
+  &__list {
+    font-family: var(--font-family-secondary);
+  }
+
+  &__wrapper {
+    ul {
+      display: none;
+    }
+
+    @include viewports.large-up {
+      ul {
+        display: block;
+      }
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: var(--line-height-md);
+
+  a {
+    display: flex;
+    align-items: center;
+    font-size: var(--text-sm);
+
+    @include viewports.medium-up {
+      font-size: var(--text-md);
+    }
+  }
+
+  i {
+    position: absolute;
+    //TODO: transition into css variable
+    transition: all var(--anim-ease) var(--anim-fade-quick);
+  }
+
+  &__item {
+    position: relative;
+    max-width: 50%;
+    flex: 1;
+  }
+
+  &__title {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  --pagination-arrow-padding: 1.5em;
+  --pagination-arrow-spacing-initial: 0em;
+  --pagination-arrow-spacing-on-hover: -0.3em;
+
+  &--previous {
+    i {
+      left: var(--pagination-arrow-spacing-initial);
+      padding-right: var(--pagination-arrow-padding);
+    }
+
+    a:hover {
+      i {
+        left: var(--pagination-arrow-spacing-on-hover);
+      }
+    }
+
+    .pagination__title {
+      margin-left: var(--pagination-arrow-padding);
+      justify-content: flex-start;
+    }
+  }
+
+  &--next {
+    i {
+      right: var(--pagination-arrow-spacing-initial);
+      padding-left: var(--pagination-arrow-padding);
+    }
+
+    a:hover {
+      i {
+        right: var(--pagination-arrow-spacing-on-hover);
+      }
+    }
+
+    .pagination__title {
+      margin-right: var(--pagination-arrow-padding);
+      justify-content: flex-end;
+      text-align: right;
+    }
+  }
+}

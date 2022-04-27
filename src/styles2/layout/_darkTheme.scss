@@ -1,0 +1,35 @@
+[data-theme="dark"] {
+    body {
+        --color-links: var(--color-neutral-gray-27);
+        --color-body-text: var(--color-neutral-gray-02);
+        --color-body-bg: var(--color-neutral-gray-93);
+
+        --color-form: var(--color-neutral-gray-02);
+        --color-form-border: var(--color-neutral-gray-27);
+        --color-form-bg: var(--color-neutral-black);
+        --color-form-label: var(--color-neutral-gray-02);
+        --color-form-info: var(--color-neutral-gray-27);
+        --color-form-placeholder: var(--color-neutral-gray-34);
+    }
+
+    .kg-bookmark-container,
+    .kg-bookmark-container:hover {
+        box-shadow: 0 0px 4px 0px var(--color-neutral-gray-13);
+    }
+
+    .post-feed__toggle .c-btn {
+        --color-button: var(--color-neutral-gray-60);
+    }
+
+    .post + aside {
+        background-color: var(--color-neutral-gray-73);
+    }
+
+    .post-card__image {
+        background-color: var(--color-neutral-gray-87);
+    }
+
+    .menu__overlay {
+        background-color: var(--color-neutral-white);
+    }
+}

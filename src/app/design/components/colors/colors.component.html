@@ -1,0 +1,31 @@
+<section class="design-color post__section">
+  <h3>Brand:</h3>
+  <h4>Primary:</h4>
+  <div class="design-color__container -primary-color">
+
+    <app-color-bubble></app-color-bubble>
+    <app-color-bubble [modifier]="ColorModifier.Light"></app-color-bubble>
+    <app-color-bubble [modifier]="ColorModifier.Emphasis"></app-color-bubble>
+  </div>
+  <h4>Secondary:</h4>
+  <div class="design-color__container -secondary-color">
+    <app-color-bubble></app-color-bubble>
+    <app-color-bubble [modifier]="ColorModifier.Light"></app-color-bubble>
+    <app-color-bubble [modifier]="ColorModifier.Emphasis"></app-color-bubble>
+  </div>
+  <h4>Tertiary:</h4>
+  <div class="design-color__container -tertiary-color">
+    <app-color-bubble></app-color-bubble>
+    <app-color-bubble [modifier]="ColorModifier.Light"></app-color-bubble>
+    <app-color-bubble [modifier]="ColorModifier.Emphasis"></app-color-bubble>
+  </div>
+  <h3>Background:</h3>
+  <div class="design-color__container">
+    <app-color-bubble [customClass]="'-background'"></app-color-bubble>
+  </div>
+  <h3>Foreground:</h3>
+  <div class="design-color__container">
+
+    <app-color-bubble [customClass]="'-foreground'"></app-color-bubble>
+  </div>
+</section>

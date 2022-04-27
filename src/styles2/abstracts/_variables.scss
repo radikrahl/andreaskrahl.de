@@ -1,0 +1,10 @@
+@use "variables/spacing";
+@use "variables/colors";
+@use "variables/borders";
+@use "variables/box-shadow";
+@use "variables/animation";
+@use "variables/typography";
+
+:root {
+    --navigation-height: 3.25em;
+}

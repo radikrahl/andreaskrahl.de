@@ -1,12 +1,10 @@
 import { Injectable, Type } from '@angular/core';
-import { Route, Routes } from '@angular/router';
-import { PortfolioComponent } from 'src/app/portfolio/components/portfolio.component';
+import { Routes } from '@angular/router';
 
 @Injectable()
 export class LazyLoadedChildRouteService {
-  public childRoutes: Routes;
+  private childRoutes: Routes;
 
-  // CONSTRUCTOR
   constructor() {}
 
   public updateLazyLoadedRoutes(childRoutes: Routes): void {
@@ -14,6 +12,6 @@ export class LazyLoadedChildRouteService {
   }
 
   public getChildRoutes(type: Type<any>): Routes {
-    return this.childRoutes.filter(x => x.component === type)[0].children;
+    return this.childRoutes ? this.childRoutes.filter((x) => x.component === type)[0].children : {} as Routes;
   }
 }

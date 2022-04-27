@@ -1,0 +1,78 @@
+/**
+* 1) Make the slider ball "squash" when clicked.
+*/
+
+.c-switch {
+  --c-switch-color: var(--color-brand-primary-light);
+  --c-switch-color-text: var(--color-body-text);
+  --c-switch-color-checked: var(--color-brand-primary);
+  --c-switch-color-unchecked: var(--color-body-bg);
+  --c-switch-color-disabled: var(--color-brand-primary-emphasis);
+  --c-switch-color-border: var(--color-brand-primary);
+  --c-switch-font-size: 1.125em;
+
+  $slider-bubble-left: 0.15em;
+
+  $this: &;
+  position: relative;
+  font-size: var(--c-switch-font-size);
+
+  &:active {
+    // 1)
+    #{$this}__input:not(:disabled) + label span::before {
+      width: 0.5em;
+    }
+  }
+
+  &__input {
+    display: none;
+
+    &:checked {
+      + label span {
+        background-color: var(--c-switch-color-checked);
+
+        // 1)
+        &:before {
+          left: calc(100% - $slider-bubble-left);
+          transform: translateX(-100%);
+          background-color: var(--color-neutral-white);
+        }
+      }
+    }
+
+    &:disabled + label span {
+      cursor: not-allowed;
+      background-color: var(--c-switch-color-disabled);
+    }
+  }
+
+  &__label {
+    user-select: none;
+    display: inline-flex;
+    align-items: center;
+
+    span {
+      background-color: var(--c-switch-color-unchecked);
+      border: var(--border-style-light) var(--c-switch-color-border);
+      height: 1.35em;
+      width: 2.5em;
+      transition: 0.4s var(--anim-ease);
+      border-radius: 20em;
+      display: inline-block;
+      margin-right: var(--space-2);
+
+      &::before {
+        content: "";
+        position: relative;
+        display: block;
+        top: 0.185em;
+        height: 0.9em;
+        width: 0.9em;
+        left: $slider-bubble-left;
+        background-color: var(--c-switch-color);
+        transition: 0.4s var(--anim-ease);
+        border-radius: var(--border-radius-full);
+      }
+    }
+  }
+}

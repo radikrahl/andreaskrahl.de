@@ -1,0 +1,117 @@
+.post {
+    &__section {
+        > {
+            pre,
+            p,
+            figure,
+            blockquote,
+            ol,
+            ul,
+            table,
+            div {
+                &:not(:first-child) {
+                    margin-top: var(--space-6);
+                }
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                &:not(:first-child) {
+                    margin-top: var(--space-6);
+                }
+            }
+        }
+
+        blockquote {
+            margin-left: var(--space-4);
+        }
+
+        ol,
+        ul {
+            list-style-position: outside;
+            margin-left: var(--space-4);
+
+            li:not(:first-child) {
+                margin-top: var(--space-2);
+            }
+
+            li > ol, li > ul {
+                margin-top: var(--space-2);
+            }
+        }
+
+        ol {
+            list-style-type: decimal;
+        }
+
+        ul {
+            list-style-type: disc;
+        }
+
+        hr + * {
+            margin-top: 0;
+        }
+
+        a {
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 1.5px;
+        }
+
+        table, .responsive-table {
+            display: block;
+            overflow-x: auto;
+            max-width: fit-content;
+            white-space: nowrap;
+
+            @extend .l-grid--wide !optional;
+        }
+    }
+
+    &__meta {
+        line-height: var(--line-height-xl);
+    }
+
+    &__footer {
+        .author {
+            &__profileImage {
+                height: 36px;
+                width: 36px;
+            }
+
+            &__text {
+                text-align: right;
+            }
+        }
+    }
+
+    &__excerpt {
+        color: var(--color-neutral-gray-50);
+    }
+
+    &__featureImage {
+        text-align: center;
+        img {
+            width: 100%;
+        }
+    }
+
+    + aside {
+        background-color: var(--color-neutral-gray-07);
+        padding: var(--spacing-5);
+    }
+}
+
+.more-posts {
+    .post-card__title {
+        font-size: var(--text-md);
+    }
+
+    .c-btn {
+        font-size: var(--text-xs);
+    }
+}

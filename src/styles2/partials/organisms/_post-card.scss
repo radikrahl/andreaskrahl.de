@@ -1,0 +1,126 @@
+@use '../../abstracts/_mixins/m_viewport' as viewports;
+@use '../../abstracts/_mixins/m_aspect-ratio' as aspect_ratio;
+
+.post-card {
+    display: flex;
+    flex-direction: column;
+
+    .post-feed--horizontal & {
+        &:not(:first-child) {
+            margin-top: var(--space-6);
+        }
+
+        &:not(:last-child) {
+            border-bottom: var(--border-divider-simple);
+        }
+    }
+
+    @include viewports.medium-up {
+        .post-feed--horizontal & {
+            flex-direction: row;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        flex: 0 1 100%;
+        width: 100%;
+
+        .post-feed--horizontal & {
+            margin-bottom: var(--space-4);
+        }
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: center;
+
+        .post-feed--horizontal & {
+            justify-content: flex-start;
+        }
+
+        .static-avatar {
+            display: block;
+            width: 36px;
+            height: 36px;
+        }
+
+        .author__text {
+            align-self: center;
+        }
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    &__excerpt {
+        flex-grow: 1;
+    }
+
+    &__media {
+        .post-feed--horizontal & {
+            @include viewports.medium-up {
+                flex: 0 0 43%;
+                margin-right: var(--space-5);
+            }
+        }
+    }
+
+    &__image {
+        border-radius: var(--border-radius-sm);
+        overflow: hidden;
+        background-color: var(--color-neutral-gray-07);
+
+        a {
+            display: block;
+            overflow: hidden;
+            @include aspect_ratio.aspect-ratio(16, 9, "img, .a-img") {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    &__read-more {
+        font-family: var(--font-family-secondary);
+        align-self: center;
+        .c-btn {
+            font-size: var(--text-xs);
+        }
+    }
+}
+
+div[class~="grid"] {
+    .post-card {
+        &__content {
+            height: 100%;
+        }
+
+        &__read-more {
+            align-self: center;
+        }
+    }
+}
+
+// marked for small only to mimic horizontal styles
+.post-card {
+    @include viewports.small-down {
+        &:not(:last-child) {
+            border-bottom: var(--border-divider-simple);
+        }
+
+        &__footer {
+            justify-content: flex-start;
+        }
+
+        &__content {
+            margin-bottom: var(--space-4);
+        }
+    }
+}
