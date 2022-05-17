@@ -1,8 +1,33 @@
 {
-"packageRules": [
-  {
-    "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-    "automerge": true
-  }
-]
+  "schedule": [
+    "after 10pm every weekday",
+    "before 5am every weekday",
+    "every weekend"
+  ],
+  "baseBranches": ["main"],
+
+  "packageRules": [
+    {
+      "matchPackageNames": ["@types/eslint", "babel-eslint"],
+      "matchPackagePrefixes": ["@typescript-eslint/", "eslint"],
+      "automerge": true
+    },
+
+    {
+      "matchPackageNames": [
+        "angular",
+        "angular-animate",
+        "angular-scroll",
+        "angular-sanitize"
+      ],
+      "automerge": true
+    },
+    {
+      "matchSourceUrlPrefixes": [
+        "https://github.com/angular-eslint/angular-eslint",
+        "https://github.com/angular/angular"
+      ],
+      "automerge": true
+    }
+  ]
 }
