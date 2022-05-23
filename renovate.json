@@ -12,15 +12,24 @@
       "matchPackagePrefixes": ["@typescript-eslint/", "eslint"],
       "automerge": true
     },
-
     {
-      "matchPackageNames": [
-        "angular",
-        "angular-animate",
-        "angular-scroll",
-        "angular-sanitize"
-      ],
-      "automerge": true
+      "packageRules": [
+        {
+          "extends": "monorepo:angular",
+          "matchUpdateTypes": ["digest", "patch", "minor", "major"],
+          "automerge": true,
+          "groupName": "angular monorepo"
+        }
+      ]
+    },
+    {
+      "packageRules": [
+        {
+          "extends": "monorepo:angular-eslint",
+          "matchUpdateTypes": ["digest", "patch", "minor", "major"],
+          "groupName": "angular-eslint monorepo"
+        }
+      ]
     },
     {
       "matchSourceUrlPrefixes": [
