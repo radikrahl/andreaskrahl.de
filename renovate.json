@@ -4,32 +4,42 @@
     "before 5am every weekday",
     "every weekend"
   ],
-  "baseBranches": ["main"],
-
+  "baseBranches": [
+    "main"
+  ],
   "packageRules": [
     {
-      "matchPackageNames": ["@types/eslint", "babel-eslint"],
-      "matchPackagePrefixes": ["@typescript-eslint/", "eslint"],
+      "matchPackageNames": [
+        "@types/eslint",
+        "babel-eslint"
+      ],
+      "matchPackagePrefixes": [
+        "@typescript-eslint/",
+        "eslint"
+      ],
       "automerge": true
     },
     {
-      "packageRules": [
-        {
-          "extends": "monorepo:angular",
-          "matchUpdateTypes": ["digest", "patch", "minor", "major"],
-          "automerge": true,
-          "groupName": "angular monorepo"
-        }
-      ]
+      "extends": "monorepo:angular",
+      "matchUpdateTypes": [
+        "digest",
+        "patch",
+        "minor",
+        "major"
+      ],
+      "automerge": true,
+      "groupName": "angular monorepo"
     },
     {
-      "packageRules": [
-        {
-          "extends": "monorepo:angular-eslint",
-          "matchUpdateTypes": ["digest", "patch", "minor", "major"],
-          "groupName": "angular-eslint monorepo"
-        }
-      ]
+      "extends": "monorepo:angular-eslint",
+      "matchUpdateTypes": [
+        "digest",
+        "patch",
+        "minor",
+        "major"
+      ],
+      "groupName": "angular-eslint monorepo",
+      "automerge": true
     },
     {
       "matchSourceUrlPrefixes": [
