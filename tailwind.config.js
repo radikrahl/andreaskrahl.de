@@ -34,5 +34,9 @@ module.exports = {
       */
       'textTransform',
       'fontWeight'
+  ],
+  content: [
+    './src/app/**/*.html',
+    './src/app/**/*.ts',
   ]
 };
