@@ -12,6 +12,7 @@ import { ContentLayoutModule } from './layout/content-layout.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import * as Hammer from 'hammerjs';
+
 @Injectable()
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = {

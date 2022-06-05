@@ -8,13 +8,19 @@ const routes: Routes = [
     path: '',
     component: ContentLayoutComponent,
     loadChildren: () =>
-      import('./portfolio/portfolio.module').then((m) => m.PortfolioModule),
+      import('./modules/portfolio/portfolio.module').then((m) => m.PortfolioModule),
   },
   {
     path: 'design',
     component: ContentLayoutComponent,
     loadChildren: () =>
-      import('./design/design.module').then((m) => m.DesignModule),
+      import('./modules/design/design.module').then((m) => m.DesignModule),
+  },
+  {
+    path: 'recipes',
+    component: ContentLayoutComponent,
+    loadChildren: () =>
+      import('./modules/recipes/recipes.module').then((m) => m.RecipesRoutesModule),
   },
   { path: '**', component: PageNotFoundComponent },
 ];
